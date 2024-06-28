@@ -101,6 +101,8 @@ for the management process (MIS; data warehouse)
 7. Paper Reading (?, Attention is all you need)
 8. Convolutional Networks (?, high level)
 9. Generative Processes (?, GAN, normalizing flow, diffusion model, high level)   
+10. Overview of packages and implementations 
+
 
 **Python specific learnings**
 - Numpy, pytorch, scikit learn, sklearn

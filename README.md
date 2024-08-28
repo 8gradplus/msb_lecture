@@ -1,8 +1,14 @@
+
+
 # MSB lecture Data Management and Business Intelligence
 
 "You will never ever use Excel again"
 We aim to teach theoretical foundations and practicel skills by illustrating the teaching concepts with Python.
 Students should require the necessary skills to start a data science project and should have enough theoretical foundation to evolve on their own.  
+
+
+### Recources
+- [Pandas tutorial from Kristian Rother](https://www.academis.eu/pandas_go_to_space/)
 
 ### Kind of event
 The teaching and learning events are offered in lecture and semi-

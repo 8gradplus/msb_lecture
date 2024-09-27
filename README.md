@@ -6,6 +6,21 @@
 We aim to teach theoretical foundations and practicel skills by illustrating the teaching concepts with Python.
 Students should require the necessary skills to start a data science project and should have enough theoretical foundation to evolve on their own.  
 
+### Development of colab notebooks
+- `pipenv install`
+- Develop locally using jupyter 
+- Make sure to add the individual dependencies in the notebook for colab
+
+### Questions
+- Examination
+	- written examination
+	- at university
+	- keiner soll durchfallen
+	- aber gesamtes notenspektrum
+- It infrastructure
+	- Alle haben ein Notebook
+- Teaching
+- Make it online  (VISA)
 
 ### Recources
 - [Pandas tutorial from Kristian Rother](https://www.academis.eu/pandas_go_to_space/)

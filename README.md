@@ -11,6 +11,17 @@ Students should require the necessary skills to start a data science project and
 - Develop locally using jupyter 
 - Make sure to add the individual dependencies in the notebook for colab
 
+### Making slides
+- Uses (reveal.js)[https://github.com/hakimel/reveal.js]
+- There is a Makefile in the slides folder
+	- `make get-reveal`: add reveal.js as submodule into slides folder
+	- `make update-reveal`: updates reveal.js
+	- In the reveal.js folder look at `demo.html` for a reveal demo.
+- You can either use markdown or html.
+
+
+update-reveal:
+
 ### Questions
 - Examination
 	- written examination

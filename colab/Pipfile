@@ -5,6 +5,9 @@ verify_ssl = true
 
 [packages]
 pandas = "*"
+torch = "*"
+scikit-learn = "*"
+numpy = "*"
 ipython= "*"
 ipykernel = "*"
 jupyter = "*"

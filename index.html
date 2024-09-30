@@ -30,25 +30,22 @@
         h1 {
             margin: 0;
             font-size: 1.5rem;
-            /* Same size as h3 */
             color: #ff5a5f;
-            /* Keep the same color */
         }
 
         h3 {
             color: #555;
             margin-top: 20px;
             font-size: 1.5rem;
-            /* Matching size for h3 */
         }
 
-        /* Flexbox to align divs side by side */
         .container {
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
             gap: 20px;
             padding: 20px;
+            flex-wrap: wrap; /* Added for wrapping on smaller screens */
         }
 
         .content {
@@ -58,8 +55,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             max-width: 30%;
+            min-width: 280px; /* Ensures content fits on small screens */
+            margin-bottom: 0; /* Adds space between rows on small screens */
         }
-     
+
         ul {
             list-style: none;
             padding: 0;
@@ -86,27 +85,22 @@
             color: #777;
         }
 
-        /* Additional styles for logo */
         .logo {
             height: 80px;
             margin-left: auto;
         }
 
-        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
         }
 
-        table,
-        th,
-        td {
+        table, th, td {
             border: 1px solid #ddd;
         }
 
-        th,
-        td {
+        th, td {
             padding: 8px;
             text-align: left;
         }
@@ -114,6 +108,53 @@
         th {
             background-color: #ff5a5f;
             color: white;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .logo {
+                height: 60px;
+                margin-top: 10px;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .content {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Further adjustments for very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.1rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            table, th, td {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -147,7 +188,7 @@
                     </tr>
                     <tr>
                         <td>2024-11-16</td>
-                        <td>Lecture 2: Extract Tranform Load</td>
+                        <td>Lecture 2: Extract Transform Load</td>
                     </tr>
                     <tr>
                         <td>2024-12-12</td>
@@ -155,7 +196,7 @@
                     </tr>
                     <tr>
                         <td>2024-12-14</td>
-                        <td>Lecture 4: Applications of Neurlal Networks</td>
+                        <td>Lecture 4: Applications of Neural Networks</td>
                     </tr>
                 </tbody>
             </table>
@@ -176,7 +217,7 @@
                     </tr>
                     <tr>
                         <td>2024-11-18</td>
-                        <td>Lecture 2: Extract Tranform Load</td>
+                        <td>Lecture 2: Extract Transform Load</td>
                     </tr>
                     <tr>
                         <td>2024-12-13</td>
@@ -184,16 +225,14 @@
                     </tr>
                     <tr>
                         <td>2024-12-16</td>
-                        <td>Lecture 4: Applications of Neurlal Networks</td>
+                        <td>Lecture 4: Applications of Neural Networks</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    </div>
 
     <div class="container">
-
         <div class="content">
             <h3>Lecture Slides</h3>
         </div>
@@ -201,14 +240,12 @@
             <h3>Exercises</h3>
             <ul>
                 <li>
-                    <a
-                        href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/Data%20Analysis.ipynb">
+                    <a href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/Data%20Analysis.ipynb">
                         Data Analysis
                     </a>
                 </li>
                 <li>
-                    <a
-                        href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/Neural%20Networks.ipynb">
+                    <a href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/Neural%20Networks.ipynb">
                         Neural Networks
                     </a>
                 </li>

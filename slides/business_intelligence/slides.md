@@ -1,4 +1,4 @@
-#### business intelligence
+_definition I_:
 
 "the ability to apprehend the interrelationships of presented <span style="color: yellow;">facts</span> in such a way as to guide <span style="color: yellow;">action</span> towards a desired <span style="color: yellow;">goal</span>"
 
@@ -6,7 +6,7 @@ Hans Peter Luhn (1958)
 
 ---
 
-#### business intelligence
+_definition II_:
 
 "business intelligence as an umbrella term to describe <span style="color: yellow;">concepts and methods to improve business decision making</span> by using fact-based support systems"
 
@@ -14,11 +14,19 @@ Howard Dresner (1989)
 
 ---
 
-#### business intelligence
+_definition III_:
 
 "business intelligence (BI) is a technology-driven process for <span style="color: yellow;">analyzing data</span> and delivering <span style="color: yellow;">actionable information</span> that helps executives, managers and workers make <span style="color: yellow;">informed business decisions</span>"
 
 Craig Stedman
+
+---
+
+_business intelligence ingredients_
+
+- <span style="color: yellow;">???</span>
+- <span style="color: yellow;">???</span>
+- <span style="color: yellow;">???</span>
 
 ---
 
@@ -123,4 +131,4 @@ todo: teamwork icon
 
 #### Notes
 
-(business strategy, business processes, business goals, observation, data exploration, iterative process, relevance assessment)
+(business strategy, business processes, business goals, observation, data exploration, iterative process, relevance assessment, on-premise vs. cloud)

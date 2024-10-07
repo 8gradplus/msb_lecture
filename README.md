@@ -20,7 +20,11 @@ Students should require the necessary skills to start a data science project and
 - You can either use markdown or html.
 
 
-update-reveal:
+### Ideas
+- ETL via Debtray Workflow
+- Discuss scaling (human and technical) and drawbacks
+- Discuss next steps upon current status
+
 
 ### Questions
 - Examination

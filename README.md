@@ -18,6 +18,8 @@ Students should require the necessary skills to start a data science project and
 	- `make update-reveal`: updates reveal.js
 	- In the reveal.js folder look at `demo.html` for a reveal demo.
 - You can either use markdown or html.
+- **Todo:** currently we clone reveal.js locally or via github actions
+- However we could also directly get the classes in html files without cloning. 
 
 
 ### Ideas

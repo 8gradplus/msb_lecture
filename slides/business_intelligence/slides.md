@@ -92,6 +92,10 @@ todo: teamwork icon
 
 [Impact of Big Data on Innovation, Competitive Advantage, Productivity, and Decision Making: Literature Review](https://www.researchgate.net/publication/350129954_Impact_of_Big_Data_on_Innovation_Competitive_Advantage_Productivity_and_Decision_Making_Literature_Review/figures)
 
+--
+
+- Jim Simons
+
 ---
 
 #### stages of analysis

@@ -100,22 +100,22 @@ What is slow and what is fast?
 
 !!row index is not the same like an index of a data table!!
 
----
+--
 
 Example
 
 Assume we have a <span style="color: yellow;">large data table</span> with _n_ entries:
 
-| first_name | last_name | age | weight | ... |
-| ---------- | --------- | --- | ------ | --- |
-| Jack       | Sparrow   | 41  | 71     | ... |
-| Hector     | Barbossa  | 63  | 74     | ... |
-| Elizabeth  | Swann     | 32  | 53     | ... |
-| ...        | ...       | ... | ...    | ... |
+| row_index | first_name | last_name | age | weight | ... |
+| --------- | ---------- | --------- | --- | ------ | --- |
+| 1         | Jack       | Sparrow   | 41  | 71     | ... |
+| 2         | Hector     | Barbossa  | 63  | 74     | ... |
+| 3         | Elizabeth  | Swann     | 32  | 53     | ... |
+| ...       | ...        | ...       | ... | ...    | ... |
 
 --
 
-We want to get all rows given a last name.
+Given a last name, we want to get the relevant row.
 
 <span style="color: lightgreen;">How can we do that?</span>
 
@@ -156,8 +156,13 @@ Back to our example:
 <span style="color: lightgreen;">Can we do better?</span>
 
 --
+Auxiliary Table:
 
-assume our data table is <span style="color: yellow;">sorted</span> according to the last name
+assume a <span style="color: yellow;">sorted</span> auxiliary table according to the last name
+
+--
+
+TODO: img sorted auxiliary table with row assignment
 
 --
 

@@ -100,7 +100,7 @@ What is slow and what is fast?
 
 !!row index is not the same like an index of a data table!!
 
---
+---
 
 Example
 
@@ -132,22 +132,27 @@ Worst case scenario: last name is not in the data table
 
 --
 
-Time Complexity
+Complexity (Linear Search)
 
-<section style="color: yellow;">
-  \[\begin{aligned} O(n) \end{aligned} \]
-</section>
-
---
-
-Space Complexity
-
-<section style="color: yellow;">
-  \[\begin{aligned} O(n) \end{aligned} \]
-</section>
+| Time                                       | Space                                      |
+| ------------------------------------------ | ------------------------------------------ |
+| <span style="color: yellow;">_O_(n)</span> | <span style="color: yellow;">_O_(1)</span> |
 
 --
 
+Short Insertion: <span style="color: lightgreen;">What is the complexity of accessing data by a row number?</span>
+
+--
+
+Time / Space Complexity (Direct Access)
+
+| Time                                       | Space                                      |
+| ------------------------------------------ | ------------------------------------------ |
+| <span style="color: yellow;">_O_(1)</span> | <span style="color: yellow;">_O_(1)</span> |
+
+--
+
+Back to our example:
 <span style="color: lightgreen;">Can we do better?</span>
 
 --

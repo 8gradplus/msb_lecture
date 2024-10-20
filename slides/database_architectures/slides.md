@@ -1,4 +1,4 @@
-#### Is a file system all you need to store information?
+Is a file system all you need to store information?
 
 - include figure keynote
 
@@ -7,7 +7,7 @@ ask for: what is the task of a file system (see next slide)
 
 ---
 
-#### What is the task of a file system?
+<span style="color: lightgreen;">What is the task of a file system?</span>
 
 --
 
@@ -34,7 +34,7 @@ ask for: what is the task of a file system (see next slide)
 
 ---
 
-#### What are those operations?
+What are those operations?
 
 <img
   src="../assets/database_architectures/CRUD_vs_HTTP_METHODS.jpeg"
@@ -49,19 +49,30 @@ ask for: what is the task of a file system (see next slide)
 
 ---
 
-So is a file system all you need to store information?
-
-What is a data base and what is it good for?
+<span style="color: lightgreen;">Is a file system all you need to store information?</span>
 
 --
 
-#### What is a data base?
+No because of the <span style="color: yellow;">no free lunch theorem</span>:
+
+- optimization towards certain tasks are tradeoffs
+- optimizing read operations might lead to slower write operations
+- faster write operations might lead to faster read operations
+- ...
+
+---
+
+<span style="color: lightgreen;">What is a data base and what is it good for?</span>
+
+--
+
+What is a data base?
 
 - TODO: include img keynote
 
 --
 
-#### What is it good for?
+What is it good for?
 
 - efficient <span style="color: yellow;">CRUD</span> operations
 - <span style="color: yellow;">ACID</span> criteria guarantee
@@ -70,11 +81,100 @@ What is a data base and what is it good for?
 
 ---
 
-How can the efficiency of **CRUD** operations be influenced?
+<span style="color: lightgreen;">How can the efficiency of **CRUD** operations be influenced?</span>
 
 --
 
-TODO: explain an index
+What is slow and what is fast?
+
+- accessing data by the row number / row index is fast
+  - direct access to memory location
+  - e.g. given a data table returning row number 7
+- accessing data by column values is slow
+  - iterate through rows, read and compare
+  - e.g. given a data table with a column _name_ returning the row where _name_ equals Henry
+
+--
+
+<span style="color: red;">Alert</span>
+
+!!row index is not the same like an index of a data table!!
+
+--
+
+Example
+
+Assume we have a <span style="color: yellow;">large data table</span> with _n_ entries:
+
+| first_name | last_name | age | weight | ... |
+| ---------- | --------- | --- | ------ | --- |
+| Jack       | Sparrow   | 41  | 71     | ... |
+| Hector     | Barbossa  | 63  | 74     | ... |
+| Elizabeth  | Swann     | 32  | 53     | ... |
+| ...        | ...       | ... | ...    | ... |
+
+--
+
+We want to get all rows given a last name.
+
+<span style="color: lightgreen;">How can we do that?</span>
+
+--
+
+Most obvious: iterate through the rows one step after another and
+check for equality with the given last name
+
+<span style="color: lightgreen;">What is the worst case number of steps we need?</span>
+
+--
+
+Worst case scenario: last name is not in the data table
+
+--
+
+Time Complexity
+
+<section style="color: yellow;">
+  \[\begin{aligned} O(n) \end{aligned} \]
+</section>
+
+--
+
+Space Complexity
+
+<section style="color: yellow;">
+  \[\begin{aligned} O(n) \end{aligned} \]
+</section>
+
+--
+
+<span style="color: lightgreen;">Can we do better?</span>
+
+--
+
+assume our data table is <span style="color: yellow;">sorted</span> according to the last name
+
+--
+
+TODO: binary / B Tree search
+
+--
+
+Remember: no free lunch theorem
+
+<span style="color: lightgreen;">What is the tradeoff?</span>
+
+--
+
+TODO sort algorithm
+
+--
+
+TODO: Real world: B Tree: short explanation and why
+
+--
+
+TODO: Exercise with pandas
 
 ---
 

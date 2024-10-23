@@ -1,6 +1,14 @@
 Is a file system all you need to store information?
 
-- include figure keynote
+<img
+  src="../assets/database_architectures/imgs/imgs.001.png"
+  alt="Overview"
+  style="
+    width: 800px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
 
 Note:
 ask for: what is the task of a file system (see next slide)
@@ -27,7 +35,6 @@ ask for: what is the task of a file system (see next slide)
   style="
     width: 300px;
     margin: 0 auto 4rem auto;
-    padding-right: 5rem;
     background: transparent;
   "
 />
@@ -42,7 +49,6 @@ What are those operations?
   style="
     width: 600px;
     margin: 0 auto 4rem auto;
-    padding-right: 5rem;
     background: transparent;
   "
 />
@@ -57,7 +63,7 @@ No because of the <span style="color: yellow;">no free lunch theorem</span>:
 
 - optimization towards certain tasks are tradeoffs
 - optimizing read operations might lead to slower write operations
-- faster write operations might lead to faster read operations
+- faster write operations might lead to slower read operations
 - ...
 
 ---
@@ -68,7 +74,15 @@ No because of the <span style="color: yellow;">no free lunch theorem</span>:
 
 What is a data base?
 
-- TODO: include img keynote
+<img
+  src="../assets/database_architectures/imgs/imgs.002.png"
+  alt="Overview"
+  style="
+    width: 800px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
 
 --
 
@@ -87,18 +101,25 @@ What is it good for?
 
 What is slow and what is fast?
 
-- accessing data by the row number / row index is fast
-  - direct access to memory location
-  - e.g. given a data table returning row number 7
-- accessing data by column values is slow
-  - iterate through rows, read and compare
-  - e.g. given a data table with a column _name_ returning the row where _name_ equals Henry
+A case study of a row-oriented database
 
 --
 
-<span style="color: red;">Alert</span>
+<span style="color: green;"> Fast </span>
 
-!!row index is not the same like an index of a data table!!
+- accessing data by the row number / row index is fast
+  - direct access to memory location
+  - e.g. given a data table returning row number 7
+- in-memory access of data
+
+--
+
+<span style="color: red;"> Slow </span>
+
+- accessing data by column values can be slow (in row-oriented databases)
+  - iterate through rows, read and compare
+  - e.g. given a data table with a column _name_ returning the row where _name_ equals Henry
+- disk-based access of data
 
 --
 
@@ -158,15 +179,48 @@ Back to our example:
 --
 Auxiliary Table:
 
-assume a <span style="color: yellow;">sorted</span> auxiliary table according to the last name
+- consisting of
+  - _last_name_
+  - _row_id_
+- <span style="color: yellow;">sorted</span> based on _last_name_
 
 --
 
-TODO: img sorted auxiliary table with row assignment
+Binary Search
+
+<img
+  src="../assets/database_architectures/imgs/imgs.003.png"
+  alt="Overview"
+  style="
+    width: 1280px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
 
 --
+
+<span style="color: lightgreen;">What is the complexity?</span>
+
+--
+
+Complexity (Binary Search)
+
+| Time                                            | Space                                      |
+| ----------------------------------------------- | ------------------------------------------ |
+| <span style="color: yellow;">_O_(log(n))</span> | <span style="color: yellow;">_O_(1)</span> |
+
+--
+
+Tada, that's what we call an index, but
 
 TODO: binary / B Tree search
+
+--
+
+<span style="color: red;">Alert</span>
+
+!!Row index is not the same as an index of a data table!!
 
 --
 
@@ -176,22 +230,20 @@ Remember: no free lunch theorem
 
 --
 
-TODO sort algorithm
-
---
-
-TODO: Real world: B Tree: short explanation and why
-
---
-
-TODO: Exercise with pandas
+TODO sort algorithm -> homework / group work / paper or exercise
 
 ---
 
 #### ACID
 
-- group work: 4 groups, each one is studying one of the 4 ACID criteria, explaining it to the course and providing an example
-- ACID (https://www.youtube.com/watch?app=desktop&v=GAe5oB742dw&ab_channel=ByteByteGo)
+- What are ACID transactions?
+- Why are they important?
+- What are the single parts of ACID?
+- What is an example for each of those parts?
+
+<span style="color: lightgreen;">Use any source to answer these questions.</span>
+
+--
 
 ---
 
@@ -202,6 +254,8 @@ TODO: Exercise with pandas
 ---
 
 #### Relational Databases
+
+- many different SQL dialect, we will not learn -> pandas dich dranne
 
 ---
 

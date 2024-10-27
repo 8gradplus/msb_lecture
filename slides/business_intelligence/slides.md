@@ -1,18 +1,159 @@
-# Two historical examples
+## Two historical examples
 
 - 1910
 - https://en.wikipedia.org/wiki/Jim_Simons
 
 ---
 
-# BI Goals
-
----
-
-# BI Components
+## BI Goals
 
 <img
   src="../assets/business_intelligence/imgs/imgs.001.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.002.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.003.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.004.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.005.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.006.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.007.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.008.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.009.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.010.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.011.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+---
+
+## BI Components
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.012.png"
   alt="Overview"
   style="
     width: 2400px;
@@ -24,37 +165,15 @@
 
 ---
 
-# Who does the work?
+## Who does the work?
 
 ---
 
-# Data Analysis
+## Decision Making
 
 ---
 
-**Stages of Analysis**
-
-<img
-  src="../assets/business_intelligence/imgs/imgs.002.png"
-  alt="Overview"
-  style="
-    width: 800px;
-    margin: 0 auto 4rem auto;
-    padding-right: 5rem;
-    background: transparent;
-  "
-/>
-
---
-
-AB-Testing diagnostic / predictive analytics
-
-- Which Group is better? What is important? Stages of AB-Testing
-- Simple Exercise
-
----
-
-# Organizational BI pitfalls
+## Organizational BI pitfalls
 
 ---
 

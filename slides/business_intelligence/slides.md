@@ -1,11 +1,95 @@
-## Two historical examples
+### Historical example
 
-- 1910
 - https://en.wikipedia.org/wiki/Jim_Simons
 
 ---
 
-## BI Goals
+### Example <span style="color: red;">Netflix</span>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.014.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+<span style="color: lightgreen;">Why does Netflix collect this data?</span>
+
+Note:
+
+Here we should have a discussion and find a lot of ideas why netflix might collect this data
+
+1. Which Types of Content Drive Engagement?
+   - Question: What genres or types of films (e.g., documentaries, thrillers, comedies) have the highest views and longest hours watched?
+   - Motivation: Identifying high-performing genres helps Netflix decide on future content investments, ensuring they produce or license films that maximize viewer engagement.
+2. What is the Return on Content Investment?
+   - Question: How do hours viewed and views per title correlate with production costs or licensing fees?
+   - Motivation: Understanding the profitability of content allows Netflix to prioritize high-ROI films and optimize spending on content that attracts and retains subscribers.
+3. What Trends in Viewership Patterns Can Inform Release Timing?
+   - Question: Are there seasonal patterns in views or hours watched that can guide the timing of releases for similar types of content?
+   - Motivation: Aligning new releases with peak demand periods (e.g., holidays) could enhance engagement and maximize return on investment.
+4. What Impact Does Runtime Have on Viewer Engagement?
+   - Question: How does the runtime of a film correlate with the total hours viewed and completion rates?
+   - Motivation: This helps optimize runtimes for future productions. If certain durations yield higher engagement or completion rates, Netflix can align runtimes with audience preferences.
+5. How Does the Release Date Affect Initial and Sustained Engagement?
+   - Question: Does releasing films on specific dates (e.g., weekends vs. weekdays) impact initial views and long-term engagement?
+   - Motivation: Knowing the best times to release content can help Netflix schedule launches for maximum viewership and subscriber retention.
+6. What Content is Most Likely to Drive New Subscriptions?
+   - Question: Are there films that disproportionately attract first-time viewers or appear in viewing patterns for new subscribers?
+   - Motivation: Insights here help Netflix understand which films contribute most to subscriber acquisition, guiding future content and marketing decisions.
+
+--
+
+<span style="color: lightgreen;">What are business relevant questions for netflix?</span>
+
+Note: put some on the whiteboard
+
+--
+
+<span style="color: lightgreen;">What do we need to answer those questions?</span>
+
+Note: put on the whiteboard
+
+--
+
+<span style="color: lightgreen;">Where do we get this information from?</span>
+
+Note: put on the whiteboard
+
+--
+
+<span style="color: lightgreen;">Who needs access to this information?</span>
+
+Note: put on the whiteboard
+
+--
+
+That is BI!
+
+---
+
+### BI for dummies
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.015.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+---
+
+### Important BI Goals & Benefits
 
 <img
   src="../assets/business_intelligence/imgs/imgs.001.png"
@@ -150,7 +234,7 @@
 
 ---
 
-## BI Components
+### BI Components
 
 <img
   src="../assets/business_intelligence/imgs/imgs.012.png"
@@ -165,15 +249,46 @@
 
 ---
 
-## Who does the work?
+### Who does the work?
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.013.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+- no hard borders
+- dependent on company structure and complexity multi-roles possible
+- many more roles involved, e.g. for decision making PO
 
 ---
 
-## Decision Making
+### BI vs. Operational BI (OBI)
+
+<span style="color: lightgreen;">Please read the following article and explain with your own words
+the difference between BI and OBI:</span>
+
+What is Operational Business Intelligence? Here’s Everything You Need to Know [[click]](https://blog.fabrichq.ai/what-is-operational-business-intelligence-heres-everything-you-need-to-know-7a51112ceb18)
 
 ---
 
-## Organizational BI pitfalls
+### Decision-Making Models (DMM)
+
+- BI as supportive structure for DMM
+- Examples:
+  - [OODA](https://en.wikipedia.org/wiki/OODA_loop)
+  - ???
+
+---
+
+### Organizational BI pitfalls
 
 ---
 
@@ -305,8 +420,50 @@ Note:
 
 ---
 
+### Exercise
+
+You are a consultant who has been asked by a company to help them evaluate their company in terms of BI. There are some problems, but they first want an unbiased analysis from you as a consultant. A first description of the company is already available.
+
+<span style="color: lightgreen;">Please prepare a list of problems and suggestions for improvement.</span>
+
+Note:
+
+Company 1: DataPro Solutions
+
+Description:
+
+DataPro Solutions has been a player in the software solutions industry for over a decade, providing custom software services for small to mid-sized companies. Recently, it decided to embrace digital transformation and enhance its decision-making process by integrating BI tools. The company has invested in training its IT department in BI practices, aiming to generate insights across its finance, HR, and marketing departments.
+
+Each department has its own data system optimized for its specific needs, and while teams occasionally exchange reports, they usually work independently. Upper management often drives decisions based on intuition and experience, viewing BI as a supportive tool rather than a fundamental part of decision-making. The company operates on a fairly tight budget, resulting in occasional limitations on software upgrades. Meanwhile, a few departments have adopted their own ad hoc data practices using various tools outside the official BI platform, hoping to meet their unique reporting needs.
+
+Hints for Students in Company 1’s Analysis:
+
+    •	The separate data systems across departments can lead to data silos, although it isn’t explicitly stated.
+    •	The emphasis on management’s intuition-based decision-making points subtly to a lack of a data-driven culture.
+    •	Limited resources hint that technology constraints might prevent the company from updating critical systems for BI.
+    •	The ad hoc data practices adopted by certain departments suggest shadow BI without directly stating it.
+
+Company 2: GreenGrow Industries
+
+Description:
+
+GreenGrow Industries is a fast-growing eco-friendly product company that has recently built out its data analytics team. Initially focused on operations, the data team has since expanded its purview to include marketing insights and customer behavior analytics. Reports are frequently generated and distributed to relevant departments, though interpretations of the data often vary from team to team.
+
+While the data team has worked hard to analyze sales trends, seasonal product demands, and customer feedback, they have sometimes found it challenging to keep pace with the requests from different departments. Each department values different metrics, and there’s a diverse range of reporting styles to suit each team’s preferences. GreenGrow recently invested in an advanced BI platform, but usage varies among team members due to its complexity. Leadership is highly supportive of BI initiatives and often expresses an interest in exploring further.
+
+Hints for Students in Company 2’s Analysis:
+
+    •	The variation in data interpretation hints at a business-data disconnect and communication gaps, as departments may not have a unified BI focus.
+    •	The challenge in meeting departmental requests suggests the potential for data silos, where each department relies on tailored, sometimes isolated insights.
+    •	The diversity in metrics and reporting preferences indicates a misalignment in business objectives, hinting at the business-data disconnect.
+    •	The mention of leaders being interested in BI but no specific follow-through hints subtly at a decision-action gap—suggesting a gap between expressed interest and actual utilization.
+
+---
+
 Notes
 
 (business strategy, business processes, business goals, observation, data exploration, iterative process, relevance assessment, on-premise vs. cloud, AB-Testing)
 
 Task / Group Work: Descripe a company, assuming the students are a consultant, what would you propose to change in order to get a real data-driven company and stay ahead of competition?
+
+KPI vs. Metric

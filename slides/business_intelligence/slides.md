@@ -283,13 +283,39 @@ What is Operational Business Intelligence? Here’s Everything You Need to Know 
 
 ---
 
-### Decision-Making Models (DMM)
+### BI is not an end in itself
 
-- BI is not a unidirektionale
-- BI is a supportive structure for DMM
-- Examples:
-  - [OODA](https://en.wikipedia.org/wiki/OODA_loop)
-  - ???
+- BI (components) is not a one-way standalone structure
+- BI is a supportive structure for e.g. Decision-Making Models
+- BI should be fully integrated into processes, e.g. decision-making processes
+- Example:
+  - [OODA](https://en.wikipedia.org/wiki/OODA_loop) by [John Richard Boyd](<https://en.wikipedia.org/wiki/John_Boyd_(military_strategist)>)
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.016.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.017.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
 
 ---
 

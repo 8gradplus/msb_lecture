@@ -72,6 +72,10 @@ Note: put on the whiteboard
 
 That is BI!
 
+--
+
+[source](https://about.netflix.com/en/news/what-we-watched-the-first-half-of-2024)
+
 ---
 
 ### BI for dummies
@@ -281,7 +285,8 @@ What is Operational Business Intelligence? Here’s Everything You Need to Know 
 
 ### Decision-Making Models (DMM)
 
-- BI as supportive structure for DMM
+- BI is not a unidirektionale
+- BI is a supportive structure for DMM
 - Examples:
   - [OODA](https://en.wikipedia.org/wiki/OODA_loop)
   - ???
@@ -424,17 +429,21 @@ Note:
 
 You are a consultant who has been asked by a company to help them evaluate their company in terms of BI. There are some problems, but they first want an unbiased analysis from you as a consultant. A first description of the company is already available.
 
-<span style="color: lightgreen;">Please prepare a list of problems and suggestions for improvement.</span>
+<span style="color: lightgreen;">What does the company do well? What is not so good? Prepare a list!</span>
 
-Note:
+--
 
-Company 1: DataPro Solutions
+**Company 1: DataPro Solutions**
 
+<span style="font-size: 25px">
 Description:
 
 DataPro Solutions has been a player in the software solutions industry for over a decade, providing custom software services for small to mid-sized companies. Recently, it decided to embrace digital transformation and enhance its decision-making process by integrating BI tools. The company has invested in training its IT department in BI practices, aiming to generate insights across its finance, HR, and marketing departments.
 
 Each department has its own data system optimized for its specific needs, and while teams occasionally exchange reports, they usually work independently. Upper management often drives decisions based on intuition and experience, viewing BI as a supportive tool rather than a fundamental part of decision-making. The company operates on a fairly tight budget, resulting in occasional limitations on software upgrades. Meanwhile, a few departments have adopted their own ad hoc data practices using various tools outside the official BI platform, hoping to meet their unique reporting needs.
+</span>
+
+Note:
 
 Hints for Students in Company 1’s Analysis:
 
@@ -443,13 +452,19 @@ Hints for Students in Company 1’s Analysis:
     •	Limited resources hint that technology constraints might prevent the company from updating critical systems for BI.
     •	The ad hoc data practices adopted by certain departments suggest shadow BI without directly stating it.
 
-Company 2: GreenGrow Industries
+--
 
+**Company 2: GreenGrow Industries**
+
+<span style="font-size: 25px">
 Description:
 
 GreenGrow Industries is a fast-growing eco-friendly product company that has recently built out its data analytics team. Initially focused on operations, the data team has since expanded its purview to include marketing insights and customer behavior analytics. Reports are frequently generated and distributed to relevant departments, though interpretations of the data often vary from team to team.
 
 While the data team has worked hard to analyze sales trends, seasonal product demands, and customer feedback, they have sometimes found it challenging to keep pace with the requests from different departments. Each department values different metrics, and there’s a diverse range of reporting styles to suit each team’s preferences. GreenGrow recently invested in an advanced BI platform, but usage varies among team members due to its complexity. Leadership is highly supportive of BI initiatives and often expresses an interest in exploring further.
+</span>
+
+Note:
 
 Hints for Students in Company 2’s Analysis:
 

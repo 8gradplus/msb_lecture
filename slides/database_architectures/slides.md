@@ -243,8 +243,6 @@ TODO sort algorithm -> homework / group work / paper or exercise
 
 <span style="color: lightgreen;">Use any source to answer these questions.</span>
 
---
-
 ---
 
 #### meta data

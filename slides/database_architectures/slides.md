@@ -230,11 +230,20 @@ Remember: no free lunch theorem
 
 --
 
-TODO sort algorithm -> homework / group work / paper or exercise
+<img
+  src="../assets/database_architectures/imgs/imgs.004.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
 
 ---
 
-#### ACID
+#### <span style="color: orange;">ACID</span>
 
 - What are ACID transactions?
 - Why are they important?
@@ -242,6 +251,116 @@ TODO sort algorithm -> homework / group work / paper or exercise
 - What is an example for each of those parts?
 
 <span style="color: lightgreen;">Use any source to answer these questions.</span>
+
+---
+
+<span style="color: orange;">**Atomicity**</span>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.005.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.006.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<span style="color: orange;">Atomicity</span> ensures that a transaction is treated as a single, indivisible unit of work. Either all the changes made by the transaction are committed to the database, or none of them are.
+
+---
+
+<span style="color: orange;">**Consistency**</span>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.007.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.008.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<span style="color: orange;">Consistency</span> ensures that a transaction brings the database from one valid state to another. The integrity constraints and rules defined for the database are maintained before and after the transaction.
+
+---
+
+<span style="color: orange;">**Isolation**</span>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.009.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<span style="color: orange;">Isolation</span> ensures that the execution of one transaction is isolated from the execution of other transactions.
+
+---
+
+<span style="color: orange;">**Durability**</span>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.010.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<span style="color: orange;">Durability</span> ensures that once a transaction is committed, its effects persist even in the event of system failures. The changes made by a committed transaction are permanent and survive system crashes or power outages.
 
 ---
 

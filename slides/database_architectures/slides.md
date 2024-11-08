@@ -498,7 +498,64 @@ Remember the table:
 
 <span style="color: orange;">Example: Primary and Foreign Keys</span>
 
-TODO
+The customer, order and product chain. Let's be a data engineer.
+
+--
+
+| customer_id | first_name | last_name |
+| ----------- | ---------- | --------- |
+| 1           | Viktor     | Atalla    |
+| 2           | Christoph  | Baldow    |
+| 3           | Peter      | Parker    |
+| ...         | ...        | ...       |
+
+<span style="color: lightgreen;">Given a customer table, what should the primary key? Do we need a foreign key?</span>
+
+--
+
+| <span style="color: orange;">customer_id</span> | first_name | last_name |
+| ----------------------------------------------- | ---------- | --------- |
+| 1                                               | Viktor     | Atalla    |
+| 2                                               | Christoph  | Baldow    |
+| 3                                               | Peter      | Parker    |
+| ...                                             | ...        | ...       |
+
+- <span style="color: orange;">Primary Key</span>
+- <span style="color: yellow;">Foreign Key</span>
+
+--
+
+<span style="color: lightgreen;">Create some fictitious tables with to goal to efficiently combine orders with customers and products. Define primary and foreign keys for each of the designed tables.</span>
+
+--
+
+Order - Customer - Relation
+
+| <span style="color: orange;">order_id</span> | <span style="color: yellow;">customer_id</span> | date       | gross costs |
+| -------------------------------------------- | ----------------------------------------------- | ---------- | ----------- |
+| 1                                            | 1                                               | 2024-11-01 | 23.06       |
+| 2                                            | 2                                               | 2024-11-05 | 12.74       |
+| 3                                            | 1                                               | 2024-10-02 | 31.57       |
+| ...                                          | ...                                             | ...        |
+
+- <span style="color: orange;">Primary Key</span>
+- <span style="color: yellow;">Foreign Key</span>
+
+--
+
+Order - Product - Relation
+
+| <span style="color: yellow;">order_id</span> | <span style="color: yellow;">product_id</span> | amount |
+| -------------------------------------------- | ---------------------------------------------- | ------ |
+| 1                                            | 1                                              | 2      |
+| 1                                            | 3                                              | 1      |
+| 3                                            | 2                                              | 5      |
+| ...                                          | ...                                            | ...    |
+
+- <span style="color: orange;">Primary Key</span>
+- <span style="color: yellow;">Foreign Key</span>
+
+--
 
 ---
 

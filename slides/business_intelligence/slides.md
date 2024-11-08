@@ -503,8 +503,7 @@ Hints for Students in Company 2’s Analysis:
 
 Notes
 
-(business strategy, business processes, business goals, observation, data exploration, iterative process, relevance assessment, on-premise vs. cloud, AB-Testing)
+# todo vat
 
-Task / Group Work: Descripe a company, assuming the students are a consultant, what would you propose to change in order to get a real data-driven company and stay ahead of competition?
-
-KPI vs. Metric
+- jim simons slides
+- add netflix challenge as seminal ai/bi story

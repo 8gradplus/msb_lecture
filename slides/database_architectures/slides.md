@@ -243,7 +243,9 @@ Remember: no free lunch theorem
 
 ---
 
-#### <span style="color: orange;">ACID</span>
+<h3><span style="color: orange;">ACID</span></h>
+
+---
 
 - What are ACID transactions?
 - Why are they important?
@@ -364,9 +366,147 @@ Remember: no free lunch theorem
 
 ---
 
-#### meta data
+<h3><span style="color: orange;">Meta data</span></h>
 
-- schema
+---
+
+<span style="color: lightgreen;">Prepare for a little question round using the wikipedia article about [metadata](https://en.wikipedia.org/wiki/Metadata)</span>!
+
+--
+
+<span style="color: lightgreen;">Describe in your own words what metadata is. Is it exclusively defined for databases?</span>
+
+--
+
+<span style="color: lightgreen;">What categories exist and are they relevant for databases? Try to find examples regarding databases.</span>
+
+--
+
+<span style="color: lightgreen;">...</span>
+
+--
+
+<img
+  src="../assets/database_architectures/imgs/imgs.011.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+[Source](https://databasetown.com/what-is-database-metadata-examples-types/)
+
+---
+
+<h3><span style="color: orange;">Primary and Foreign Keys</span></h>
+
+---
+
+<span style="color: orange;">**Primary Keys**</span>
+
+... typically a **unique** index, but why?
+
+--
+
+<span style="color: orange;">Ensuring Uniqueness</span>
+
+- A primary key uniquely identifies each row in a table, ensuring that there are no duplicate rows. This is crucial for tables that represent entities with distinct identities (e.g., users, products, orders), as it helps prevent data redundancy and ambiguity.
+- Without a primary key, it can be challenging to distinguish between records, particularly if two or more rows have identical values across all columns.
+
+--
+
+<span style="color: orange;">Referential Integrity</span>
+
+- When other tables reference a table, they often use a **foreign key** that points to the primary key in that table.
+- Without a primary key, linking data across multiple tables becomes inconsistent and complex, as there’s no guaranteed, unique identifier to reference.
+
+--
+
+<span style="color: orange;">Efficient Data Access</span>
+
+- e.g. PostgreSQL automatically creates a unique index for the primary key column(s). This index improves the efficiency of lookups, making retrieval of specific records faster.
+- If you need to search for specific rows frequently, particularly in large tables, the primary key index allows PostgreSQL to quickly locate rows, improving performance.
+
+--
+
+<span style="color: orange;">Update and Delete Operations</span>
+
+- Primary keys simplify and safeguard update and delete operations. For instance, if you want to delete a specific row, a primary key provides a unique reference.
+- Without a primary key, you may end up deleting or updating multiple rows unintentionally if they share identical values across columns.
+
+--
+
+<span style="color: orange;">Avoiding Data Anomalies</span>
+
+- Without a primary key, the database lacks a strong enforcement mechanism for ensuring each row’s uniqueness, which can lead to data anomalies. These anomalies can cause issues in reporting, data aggregation, and business logic implementation.
+
+--
+
+Remember the table:
+
+| row_index | first_name | last_name | age | weight |
+| --------- | ---------- | --------- | --- | ------ |
+| 1         | Jack       | Sparrow   | 41  | 71     |
+| 2         | Hector     | Barbossa  | 63  | 74     |
+| 3         | Elizabeth  | Swann     | 32  | 53     |
+| ...       | ...        | ...       | ... | ...    |
+
+<span style="color: lightgreen;">What column would you choose as the primary index? Why?</span>
+
+---
+
+<span style="color: orange;">**Foreign Keys**</span>
+
+... is used in relational databases like PostgreSQL to establish and enforce relationships between tables, ensuring referential integrity across your data.
+
+--
+
+<span style="color: orange;">Maintaining Referential Integrity</span>
+
+- A foreign key in one table points to a primary key (or unique key) in another table, creating a link between the two. This link enforces referential integrity by ensuring that records in the referencing table (the one with the foreign key) correspond to valid records in the referenced table.
+
+--
+
+<span style="color: orange;">Preventing Orphaned Records</span>
+
+- Foreign keys prevent orphaned records by enforcing that any record in a child table must have a corresponding record in the parent table. Without a foreign key constraint, it’s possible to delete or update data in the parent table without updating the child, leading to orphaned records (child records without a valid parent).
+
+--
+
+<span style="color: orange;">Enforcing Data Consistency Across Tables</span>
+
+- Foreign keys ensure that related data in different tables remains consistent. They prevent actions that could break the logical relationships within your data, like inserting an order with a non-existent customer_id.
+
+--
+
+<span style="color: orange;">Supporting Cascading Actions</span>
+
+- Foreign keys can be set up to cascade certain actions, like ON DELETE CASCADE or ON UPDATE CASCADE. This means that if a record in the parent table is deleted or updated, all related records in the child table will be automatically deleted or updated to match, maintaining consistency.
+- Cascading actions can simplify maintenance of related data, reducing the need for complex operations to keep data consistent.
+
+--
+
+<span style="color: orange;">Improving Querying and Logical Structure</span>
+
+- Foreign keys make relationships between tables explicit, which helps both the database engine and developers understand the logical connections within the data.
+- They allow you to write queries that utilize these relationships, such as using JOIN operations, which are faster and easier to manage when relationships are clearly defined and enforced.
+
+---
+
+<span style="color: orange;">Example: Primary and Foreign Keys</span>
+
+TODO
+
+---
+
+<span style="color: purple;">Homework: Search for other key types and try to explain them! </span>
+
+---
+
+<h3><span style="color: orange;">Different types of databases</span></h>
 
 ---
 
@@ -395,6 +535,12 @@ Remember: no free lunch theorem
 - Object Databases
 - Multimodel Databases
 - NewSQL Databases
+
+---
+
+#### Object storages
+
+https://blog.min.io/databases-for-object-storage/
 
 ---
 

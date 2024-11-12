@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css" />
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css" />
   <link rel="stylesheet" href="../reveal.js/dist/theme/black.css" />
-  
+
   <!-- Latex -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
   <!-- Theme for syntax highlighting -->
@@ -21,9 +21,185 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
+      <section data-markdown data-separator="^\n---\n" data-separator-vertical="^\n--\n">
+        ### Python
+        - High level programming language
+        - Simple and readable
+        - Extensive libraries for data science
+        - Data Analysis: [Pandas](https://pandas.pydata.org/)
+        - Data Visualization: [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/),
+        [Bokeh](https://bokeh.org/), ...
+        - Numerics: [Numpy](https://numpy.org/), [Scipy](https://scipy.org/)
+        - Machine learning: [Statsmodels](https://www.statsmodels.org/stable/index.html),
+        [Scikit-learn](https://scikit-learn.org/stable/)
+        - Neural networks: [Pytorch](https://pytorch.org/), [Tensorflow](https://www.tensorflow.org/)
+
+        ---
+
+        ### Learning Goal
+        - Data Analysis with Pandas
+        - Much faster and versatile data analysis as Excel
+        - Shares the same key conscepts as SQL
+        - Read and write data in any format (database, Excel, CSV, ...)
+        - Data visualization with Matplotlib
+        - Understanding and interpret your results
+        - First, we need to learn some Python basics
+
+        **Dont't dispair, chatgpt is your friend!**
+
+        ---
+
+        # Python basics
+        - Data Types:
+        - Strings,
+        - Numerical
+        - Lists
+        - Dictionaries
+        - Functions
+
+        --
+
+        ### Running Python
+        - In this tutorial we will use goolge colabs to run Python
+        - You need a google account to run colabs
+        - Links to the exercise colab are on the [course site](https://8gradplus.github.io/msb_lecture/)
+        - So there is no need to install Python on your local machine.
+        - We encourage you to install Python for your future projects
+
       </section>
 
+      <section>
+        <h2>Data Types</h2>
+        Strings
+        <pre><code data-trim>      
+          print("Hello World")
+        </code></pre>
+        Assign variable
+        <pre><code data-trim>          
+          # This is a comment and does nothing    
+          my_string = "Hello World"
+          print(my string)
+        </code></pre>
+        Indention matters
+        <pre><code data-trim>          
+            my_string = "Hello World" # Does not work
+          print(my string)
+        </code></pre>
+      </section>
+
+      <section>
+        Numeric data types
+        <pre><code data-trim data-noescape>      
+          5 + 6
+        </code></pre>
+        With variables
+        <pre><code data-trim>      
+          x = 5 
+          y = 6
+          result = x + y
+        </code></pre>
+        Use numpy for more math support
+        <pre><code data-trim>      
+          import numpy as np
+          x = 3
+          np.exp(x)
+        </code></pre>
+      </section>
+      <section>
+        <section>
+          Lists: a collection of items
+          <pre><code data-trim data-noescape>      
+          # 3 item list of numbers
+          my_list = [1, 2, 3] 
+          # 3 item list of strings
+          my_list_2 = ["Hello", "World", "again"]
+          # 3 item list of mixed data types 
+          my_list_3 = [1, "Hello", [2, 3, 4]]
+        </code></pre>
+          Iterate through list with for loop
+          <pre><code data-trim data-noescape>      
+          for element in my_list:
+            # need to indent!
+            print(element)
+        </code></pre>
+          Manipulate lists
+          <pre><code data-trim data-noescape>      
+          result = [] 
+          for x in my_list:
+            result.append(x+1)  
+        </code></pre>
+        </section>
+        <section>
+          Manipulate lists
+          <pre><code data-trim data-noescape>      
+          result = [] 
+          for x in my_list:
+            result.append(x+1)  
+        </code></pre>
+          Syntactic sugar: list comprehensions
+          <pre><code data-trim data-noescape>      
+            result = [x+1 for x in my_list]   
+          </code></pre>
+        </section>
+      </section>
+      <section>
+        Dictionaries: a collection of key value pairs
+        <pre><code data-trim data-noescape>      
+          my_dict = {"name": "Musil", 
+                     "surname": "Robert", 
+                     "age": 42, 
+                     "grades": [1,2,3] }   
+        </code></pre>
+        Access by key
+        <pre><code data-trim data-noescape>      
+          my_dict["name"]   
+        </code></pre>
+        Get all keys of a dictionary
+        <pre><code data-trim data-noescape>      
+          my_dict.keys()   
+        </code></pre>
+        Iterate through keys
+        <pre><code data-trim data-noescape>      
+          for key in my_dict.keys():
+            print(my_dict[key])
+        </code></pre>
+      </section>
+      <section>
+        <h2>Functions</h2>
+        <section>
+          <ul>
+            <li>A function is a block of code which only runs when it is called.</li>
+            <li>You can pass data, known as parameters, into a function.</li>
+            <li>A function can return data as a result.</li>
+          </ul>
+          <pre><code data-trim>               
+          def my_function(param1, param2):
+              # Indention matters!
+              result = ...
+              return result
+          </code></pre>
+          <pre><code data-trim data-noescape>      
+            # define function
+            def my_function(param1, param2): 
+              result = ....
+              return result
+            
+            # call function
+            my_function(a, b)
+          </code></pre>  
+        </section>
+        <section>
+          <ul>
+            <li>Functions help breaking complicated tasks down in simpler ones</li>
+            <li>Functions can be reused and avoid errors</li>
+            <li>In practice, try to use functions in your program</li>
+          </ul>
+        </section>
+      </section>
+
+
+
+      </>
     </div>
   </div>
 

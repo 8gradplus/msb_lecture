@@ -159,6 +159,10 @@ Complexity (Linear Search)
 | ------------------------------------------ | ------------------------------------------ |
 | <span style="color: yellow;">_O_(n)</span> | <span style="color: yellow;">_O_(1)</span> |
 
+Note:
+
+Give an intuitive understanding of `the big O notation`
+
 --
 
 Short Insertion: <span style="color: lightgreen;">What is the complexity of accessing data by a row number?</span>
@@ -559,7 +563,7 @@ Order - Product - Relation
 
 ---
 
-<span style="color: purple;">Homework: Search for other key types and try to explain them! </span>
+<span style="color: red;">Homework: What other key types exists? Explain them!</span>
 
 ---
 
@@ -567,26 +571,80 @@ Order - Product - Relation
 
 ---
 
-#### Relational Databases
+<span style="color: orange;">Relational Databases (rdb)</span>
 
-- many different SQL dialect, we will not learn -> pandas dich dranne
+- all examples up to this point were examples for relational databases
+- relational databases are a structured approach to data storage, using tables to organize and link data
+- typically implements transactions (ACID)
+- based on the relational model
+
+--
+
+**Origins of Relational Databases**
+
+- Developed in the 1970s by Edgar F. Codd at IBM.
+- Codd’s Relational Model paper in 1970 laid the foundation.
+- Goals: data consistency, ease of use, and support for complex queries.
+- Key players: IBM’s System R and Oracle as early adopters.
+
+--
+
+**Relational Model / Core Concepts**
+
+- Table (<span style="color: orange;">Relation</span>): Structure holding rows and columns (like a spreadsheet).
+- Rows (<span style="color: orange;">Tuples</span>): Each row represents a unique record.
+- Columns (<span style="color: orange;">Attributes</span>): Each column represents a specific property (e.g., “name,” “age”).
+- <span style="color: orange;">Primary Key</span>: Unique identifier for each row.
+- <span style="color: orange;">Foreign Key</span>: Links rows across different tables.
+
+--
+
+**How Relational Databases Work**
+
+- Data stored in tables; tables linked via keys.
+- Relational databases use <span style="color: orange;">SQL (Structured Query Language)</span> to manage data.
+- SQL supports CRUD operations (Create, Read, Update, Delete).
+- Benefits of structure: reduces redundancy and supports complex data retrieval.
+
+--
+
+**Data Relationships in Relational Databases**
+
+- <span style="color: orange;">One-to-One Relationship</span>: Each record in Table A is linked to one in Table B.
+- <span style="color: orange;">One-to-Many Relationship</span>: A single record in Table A relates to multiple records in Table B.
+- <span style="color: orange;">Many-to-Many Relationship</span>: Records in Table A relate to multiple records in Table B (typically using a linking table).
+
+--
+
+<span style="color: lightgreen;">What is the relationship?</span>
+
+- order to product
+- product to order
+- product to manufacturer
+- advertisement to product
+
+--
+
+**SQL**
+
+- Core SQL Standard: defines features the rdb should support, e.g. SELECT, INSERT, UPDATE or DELETE
+- ANSI/ISO has released multiple versions of SQL over the years: SQL-86, SQL-89, ..., SQL:2023
+- Additional Vendor Specific Extensions, e.g. Postgres, Mysql, ...
+- **However:** <span style="color: orange;">We concentrate on Pandas. Why? Because Pandas is powerful and more intuitive for beginners!</span>
 
 ---
 
-#### Document Databases
+<span style="color: orange;">Document Databases</span>
 
 ---
 
-#### Key-Value Stores
-
----
-
-#### Graph Databases
+<span style="color: orange;">Graph Databases</span>
 
 ---
 
 #### Others
 
+- Key-Value Stores
 - Column-Family Databases
 - Time-Series Databases
 - Object Databases

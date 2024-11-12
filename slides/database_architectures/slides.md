@@ -670,10 +670,16 @@ The [Stackoverflow Survey](https://survey.stackoverflow.co/2023/#most-popular-te
 
 ---
 
-#### Object storages
+The choice depends on <span style="color: orange;">usecases</span>:
+
+- Do I have a fixed schema?
+- Is my data dense?
+- What about images and other binary / unstructured data?
+
+---
+
+Short excursion: <span style="color: orange;">Object storages</span>
 
 https://blog.min.io/databases-for-object-storage/
 
 ---
-
-#### Comparison Overview

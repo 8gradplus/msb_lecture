@@ -636,6 +636,8 @@ Order - Product - Relation
 
 <span style="color: orange;">Document Databases</span>
 
+- one of the main categories of NoSQL databases
+
 ---
 
 <span style="color: orange;">Graph Databases</span>
@@ -650,6 +652,21 @@ Order - Product - Relation
 - Object Databases
 - Multimodel Databases
 - NewSQL Databases
+
+---
+
+The [Stackoverflow Survey](https://survey.stackoverflow.co/2023/#most-popular-technologies-database) about the most popular databases in 2024
+
+<img
+  src="../assets/database_architectures/imgs/imgs.012.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
 
 ---
 

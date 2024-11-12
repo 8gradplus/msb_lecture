@@ -39,7 +39,7 @@
         ### Learning Goal
         - Data Analysis with Pandas
         - Much faster and versatile data analysis as Excel
-        - Shares the same key conscepts as SQL
+        - Shares the same key concepts as SQL
         - Read and write data in any format (database, Excel, CSV, ...)
         - Data visualization with Matplotlib
         - Understanding and interpret your results
@@ -51,10 +51,10 @@
 
         # Python basics
         - Data Types:
-        - Strings,
-        - Numerical
-        - Lists
-        - Dictionaries
+          - Strings,
+          - Numerical
+          - Lists
+          - Dictionaries
         - Functions
 
         --
@@ -116,6 +116,22 @@
           # 3 item list of mixed data types 
           my_list_3 = [1, "Hello", [2, 3, 4]]
         </code></pre>
+          Acces by index (Start at 0)
+          <pre><code data-trim data-noescape>      
+            my_list[0] # 1 
+            my_list[1] # 2
+            my_list[2] # 3
+            my_list[-1] # 3 last element
+          </code></pre>
+          List operations
+          <pre><code data-trim data-noescape>      
+            min(my_list) # 1 
+            max(my_list) # 3
+            sum(my_list) # 6
+            len(my_list) # 3 
+          </code></pre>
+        </section>
+        <section>
           Iterate through list with for loop
           <pre><code data-trim data-noescape>      
           for element in my_list:
@@ -128,18 +144,10 @@
           for x in my_list:
             result.append(x+1)  
         </code></pre>
-        </section>
-        <section>
-          Manipulate lists
-          <pre><code data-trim data-noescape>      
-          result = [] 
-          for x in my_list:
-            result.append(x+1)  
+        Syntactic sugar: list comprehensions
+        <pre><code data-trim data-noescape>      
+          result = [x+1 for x in my_list]   
         </code></pre>
-          Syntactic sugar: list comprehensions
-          <pre><code data-trim data-noescape>      
-            result = [x+1 for x in my_list]   
-          </code></pre>
         </section>
       </section>
       <section>
@@ -165,8 +173,9 @@
         </code></pre>
       </section>
       <section>
-        <h2>Functions</h2>
         <section>
+        <h2>Functions</h2>
+
           <ul>
             <li>A function is a block of code which only runs when it is called.</li>
             <li>You can pass data, known as parameters, into a function.</li>
@@ -177,24 +186,103 @@
               # Indention matters!
               result = ...
               return result
+          
+          # call function
+          my_function(a, b)
           </code></pre>
-          <pre><code data-trim data-noescape>      
-            # define function
-            def my_function(param1, param2): 
-              result = ....
-              return result
-            
-            # call function
-            my_function(a, b)
-          </code></pre>  
+        </section>
+        <section>
+          Hello world as function
+          <pre><code data-trim>               
+          def print_something(string):
+              print(string)
+          print_something("Hello World")
+          </code></pre>
+          Add two numbers
+          <pre><code data-trim>               
+            def add_numbers(x, y):
+                return x + y
+            add_numbers(3, 4) # 7
+            </code></pre>
+            Defaul values
+          <pre><code data-trim>               
+            def add_numbers(x, y=1):
+                return x + y
+            add_numbers(3) # 4 same as add_numbers(3,1)
+            add_numbers(3,4) # 7
+            </code></pre>
         </section>
         <section>
           <ul>
-            <li>Functions help breaking complicated tasks down in simpler ones</li>
             <li>Functions can be reused and avoid errors</li>
             <li>In practice, try to use functions in your program</li>
+            <li>Functions help breaking complicated tasks down in simpler ones</li>
           </ul>
+        <pre><code data-trim>               
+          def f1(df):
+              ...
+
+          def f2(df):
+              ...
+
+          # Chain functions to get final result
+          result = f1(df)
+          result = f2(result)
+          ....
+          result = fn(result)
+          </code></pre>
         </section>
+      </section>
+
+      <section>
+        
+<div>
+<table>
+  <tr>
+      <th ></th>
+      <th>Country</th>
+      <th>Region</th>
+      <th>GDP</th>
+      <th>Age</th>
+  </tr>
+  <tr>
+      <td >0</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1969</td>
+      <td>62.34</td>
+  </tr>
+  <tr>
+      <td>1</td>
+      <td>Angola</td>
+      <td>Africa</td>
+      <td>6029</td>
+      <td>64.88</td>
+  </tr>
+  <tr>
+      <td>2</td>
+      <td>Albania</td>
+      <td>Europe</td>
+      <td>13278</td>
+      <td>76.23</td>
+  </tr>
+  <tr>
+      <td>3</td>
+      <td>Andorra</td>
+      <td>Europe</td>
+      <td>49728</td>
+      <td>78.25</td>
+  </tr>
+  <tr>
+      <td>4</td>
+      <td>Emirates</td>
+      <td>Asia</td>
+      <td>67383</td>
+      <td>73.18</td>
+  </tr>
+</table>
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: none"></div>
+</div>
       </section>
 
 

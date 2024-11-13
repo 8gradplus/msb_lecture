@@ -274,6 +274,85 @@ That is BI!
 
 ---
 
+### Stages of Analytics
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.018.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+<img
+  src="../assets/business_intelligence/imgs/imgs.019.png"
+  alt="Overview"
+  style="
+    width: 2400px;
+    margin: 0px 0px 0px 0px;
+    padding-right: 0rem;
+    background: transparent;
+  "
+/>
+
+--
+
+Case Study
+
+An online retailer observes a deterioration in sales.
+An initial assumption: customer loyalty has declined.
+
+--
+
+<span style="color: lightgreen;">Descriptive Analytics</span>
+
+What data or metrics would you examine to understand the current state of customer loyalty and sales?
+
+Note:
+
+- Look at historical sales data, customer repeat purchase rates, average order value, and site traffic trends.
+- Identify key metrics such as monthly active users, average purchase frequency, and customer satisfaction ratings.
+
+--
+
+<span style="color: lightgreen;">Diagnostic Analytics</span>
+
+Why might customer loyalty and sales be declining? What factors could be causing this trend?
+
+Note:
+
+- Investigate possible issues such as product availability, customer feedback (e.g., complaints, reviews), competitive factors, or recent changes in pricing or service.
+- Check if there’s been an increase in customer support tickets, returns, or complaints about a specific product category or aspect of service.
+
+--
+
+<span style="color: lightgreen;">Predictive Analytics</span>
+
+Based on the data, what can we predict about future sales or customer loyalty if current trends continue?
+
+Note:
+
+- Forecast future sales using time series models and analyze if there’s a trend indicating further decline or possible recovery.
+- Examine customer cohorts to predict repeat purchase behavior, or use demographic data to anticipate seasonal trends in customer loyalty.
+
+--
+
+<span style="color: lightgreen;">Prescriptive Analytics</span>
+
+What strategies or actions could the retailer take to improve customer loyalty and boost sales?
+
+Note:
+
+- Recommend targeted loyalty programs, personalized offers, or new product lines to increase engagement.
+- Consider adjustments in marketing strategies, pricing, customer service improvements, or implementing a feedback loop for continual improvement.
+
+---
+
 ### BI vs. Operational BI (OBI)
 
 <span style="color: lightgreen;">Please read the following article and explain with your own words

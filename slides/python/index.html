@@ -211,30 +211,18 @@
         3 == 4 # False
         ```
         ```
-        3 < 4 # True
-        ```
-        If else clause
-        ```
-        if value <= 3:
-          # indention matters
-          print("Value is lower or equal 3!")
-        else: 
-          # indention matters
-          print("Value is larger 3")
+        3 < 4 # True ``` If else clause ``` if value <=3: # indention matters print("Value is lower or equal 3!") else:
+          # indention matters print("Value is larger 3") ``` </section>
+          <section>
+            <section>
+              <h2>Functions</h2>
 
-        ```
-
-      </section>
-      <section>
-        <section>
-          <h2>Functions</h2>
-
-          <ul>
-            <li>A function is a block of code which only runs when it is called.</li>
-            <li>You can pass data, known as parameters, into a function.</li>
-            <li>A function can return data as a result.</li>
-          </ul>
-          <pre><code data-trim>               
+              <ul>
+                <li>A function is a block of code which only runs when it is called.</li>
+                <li>You can pass data, known as parameters, into a function.</li>
+                <li>A function can return data as a result.</li>
+              </ul>
+              <pre><code data-trim>               
           def my_function(param1, param2):
               # Indention matters!
               result = ...
@@ -243,35 +231,35 @@
           # call function
           my_function(a, b)
           </code></pre>
-        </section>
-        <section>
-          Hello world as function
-          <pre><code data-trim>               
+            </section>
+            <section>
+              Hello world as function
+              <pre><code data-trim>               
           def print_something(string):
               print(string)
           print_something("Hello World")
           </code></pre>
-          Add two numbers
-          <pre><code data-trim>               
+              Add two numbers
+              <pre><code data-trim>               
             def add_numbers(x, y):
                 return x + y
             add_numbers(3, 4) # 7
             </code></pre>
-          Defaul values
-          <pre><code data-trim>               
+              Defaul values
+              <pre><code data-trim>               
             def add_numbers(x, y=1):
                 return x + y
             add_numbers(3) # 4 same as add_numbers(3,1)
             add_numbers(3,4) # 7
             </code></pre>
-        </section>
-        <section>
-          <ul>
-            <li>Functions can be reused and avoid errors</li>
-            <li>In practice, try to use functions in your program</li>
-            <li>Functions help breaking complicated tasks down in simpler ones</li>
-          </ul>
-          <pre><code data-trim>               
+            </section>
+            <section>
+              <ul>
+                <li>Functions can be reused and avoid errors</li>
+                <li>In practice, try to use functions in your program</li>
+                <li>Functions help breaking complicated tasks down in simpler ones</li>
+              </ul>
+              <pre><code data-trim>               
           def f1(df):
               ...
 
@@ -284,500 +272,910 @@
           ....
           result = fn(result)
           </code></pre>
-        </section>
-      </section>
+            </section>
+          </section>
 
-      <section>
-        <h1>Pandas</h1>
-      </section>
-      <section>
-        <h3>Pandas DataFrame </h3>
-        <div class="container">
-          <table>
-            <tr>
-              <th></th>
-              <th>Country</th>
-              <th>Region</th>
-              <th>GDP</th>
-              <th>Age</th>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>Afghanistan</td>
-              <td>Asia</td>
-              <td>1969</td>
-              <td>62</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Angola</td>
-              <td>Africa</td>
-              <td>6029</td>
-              <td>64</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Albania</td>
-              <td>Europe</td>
-              <td>13278</td>
-              <td>76</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Andorra</td>
-              <td>Europe</td>
-              <td>49728</td>
-              <td>78</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Emirates</td>
-              <td>Asia</td>
-              <td>67383</td>
-              <td>73</td>
-            </tr>
-          </table>
-
-          <div class="fragment fade-right"
-            style="position: relative; top: -433px; left: 72px; width: 680px; height: 68px; border: 2px solid yellow; background-color: none">
-            <div style="position: absolute; top: 0px; left: -180px; color: yellow">
-              Columns
-            </div>
-          </div>
-          <div class="fragment fade-up"
-            style="position: absolute; top: 0px; left: 480px; width: 150px; height: 85%; border: 2px solid yellow; background-color: none">
-            <div style="position: absolute; top: 103%; left: 20px; color: yellow">
-              Series
-            </div>
-          </div>
-          <div class="fragment fade-up"
-            style="position: absolute; top: 71px; left: 0px; width: 70px; height: 71%; border: 2px solid yellow; background-color: none">
-            <div style="position: absolute; top: 103%; left: -15px; color: yellow">
-              Index
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section data-markdown>
-        ### Pandas DataFrame
-        - 2 dimensional data structure
-        - It consists of
-        - Columns
-        - Series (potentially different data types)
-        - Index
-        - Think of it as:
-        - Excel Spreadsheet (on steroids)
-        - SQL Table
-        - Dictionary of Series objects
-      </section>
-
-      <section data-markdown>
-        ### Creating a DataFrame
-        - From dictionary
-        ```
-        import pandas as pd
-
-        data_dict = {"Country":["Afghanistan", "Angola"],
-        "Region": ["Asia", "Africa"] ,
-        "GDP": [1969, 6029],
-        "Age": [62, 64]}
-
-        df = pd.DataFrame(data_dict)
-        ```
-        - From Excel Spreadsheet
-        - From CSV File
-        - From database
-        - From API
-        - ...
-      </section>
-
-      <section>
-        Basic Operations
-      </section>
-
-      <section data-markdown>
-        Inspect DataFrame
-        ```
-        df.head(10) # First 10 elements
-        ```
-        ```
-        df.tail(10) # Last 10 elements
-        ```
-        ```
-        df.shape # Shape of the DataFrame
-        ```
-        ```
-        df.dtypes # Data types of columns (Series)
-        ```
-        Select single column (Series)
-        ```
-        df['Region']
-        ```
-        Select columns (DataFrame)
-        ```
-        df[['Region', 'GDP']]
-        ```
-      </section>
-      <section data-markdown>
-        Unique values of Series
-        ```
-        df['Region'].unique()
-        ```
-        Drop columns
-        ```
-        df.drop(columns=['ratio'])
-        ```
-        Rename columns
-        ```
-        df.rename(columns={"GDP": "gdp", "Age": "life_expectancy"})
-        ```
-      </section>
-      <section data-markdown>
-        Sort DataFrame
-        ```
-        df.sort_values(by='GDP', ascending=True)
-        ```
-        Filter by value
-        ```
-        df[df['Region'] == 'Asia']
-        ```
-        Filter by multiple values
-        ```
-        df[(df['Region'] == 'Asia') & (df['Age'] >= 80)]
-        ```
-      </section>
-      <section data-markdown>
-        Series arithmetics
-        ```
-        df['GDP'] * 100 # multiply each element with 100
-        ```
-        ```
-        df['GDP'].min()
-        df['GDP'].max()
-        ```
-        ```
-        df['GDP'].mean()
-        df['GDP'].median()
-        df['GDP'].quantile(0.5)
-        ```
-        Combine two Series
-        ```
-        df['GDP'] / df['Age'] # combine 2 columns
-        ```
-        Assign new column
-        ```
-        # Create column from other columns
-        df['ratio'] = df['GDP'] / df['Age']
-        # Create constant column
-        df['constant'] = 3.14
-        ```
-      </section>
-
-      <section>
-        Aggregation: the groupby clause
-      </section>
-      <section>
-        <div class="split-container">
-          <table style="font-size: 25px;">
-            <tr>
-              <th>Country</th>
-              <th>Region</th>
-              <th>GDP</th>
-              <th>Age</th>
-            </tr>
-            <tr>
-              <td>Afghanistan</td>
-              <td>Asia</td>
-              <td>1969</td>
-              <td>62</td>
-            </tr>
-            <tr>
-              <td>Angola</td>
-              <td>Africa</td>
-              <td>6029</td>
-              <td>64</td>
-            </tr>
-            <tr>
-              <td>Albania</td>
-              <td>Europe</td>
-              <td>13278</td>
-              <td>76</td>
-            </tr>
-            <tr>
-              <td>Andorra</td>
-              <td>Europe</td>
-              <td>49728</td>
-              <td>78</td>
-            </tr>
-            <tr>
-              <td>Emirates</td>
-              <td>Asia</td>
-              <td>67383</td>
-              <td>73</td>
-            </tr>
-          </table>
-          <div style="width:100%">
-            <div style="padding-bottom: 60px;">
-              So far: <br>Arithmetics over all entries
-              <pre><code data-trim>               
-            df['Age'].mean()
-            </code></pre>
-              <span style="font-size: 25px; color: yellow">70.6</span>
-              <div
-                style="position: absolute; top: 180px; left: 340px; width: 50px; height: 300px; border: 2px solid yellow; background-color: none">
-              </div>
-            </div>
-            <div class="fragment">
-              Now: <br>
-              Arithmetics over groups
-              <pre><code data-trim>               
-            df.groupy('Region')['Age'].mean()
-            </code></pre>
-              <table style="font-size: 25px; color: yellow">
+          <section>
+            <h1>Pandas</h1>
+          </section>
+          <section>
+            <h3>Pandas DataFrame </h3>
+            <div class="container">
+              <table>
                 <tr>
+                  <th></th>
+                  <th>Country</th>
                   <th>Region</th>
+                  <th>GDP</th>
                   <th>Age</th>
                 </tr>
                 <tr>
-                  <td>Africa</td>
-                  <td>64</td>
-                </tr>
-                <tr>
+                  <td>0</td>
+                  <td>Afghanistan</td>
                   <td>Asia</td>
-                  <td>67.5</td>
-                </tr>
-                <tr>
-                  <td>Europe</td>
-                  <td>77</td>
-                </tr>
-              </table>
-              <div
-                style="position: absolute; top: 180px; left: 150px; width: 90px; height: 300px; border: 2px solid yellow; background-color: none">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="split-container">
-          <div>
-            <font color="yellow">DataFrame</font>
-            <div style="padding-top: 200px;">
-              <table style="font-size: 25px;">
-                <tr>
-                  <th>Region</th>
-                  <th>Age</th>
-                </tr>
-                <tr>
-                  <td>Asia</td>
+                  <td>1969</td>
                   <td>62</td>
                 </tr>
                 <tr>
+                  <td>1</td>
+                  <td>Angola</td>
                   <td>Africa</td>
+                  <td>6029</td>
                   <td>64</td>
                 </tr>
                 <tr>
+                  <td>2</td>
+                  <td>Albania</td>
                   <td>Europe</td>
+                  <td>13278</td>
                   <td>76</td>
                 </tr>
                 <tr>
+                  <td>3</td>
+                  <td>Andorra</td>
                   <td>Europe</td>
+                  <td>49728</td>
                   <td>78</td>
                 </tr>
                 <tr>
+                  <td>4</td>
+                  <td>Emirates</td>
                   <td>Asia</td>
+                  <td>67383</td>
                   <td>73</td>
                 </tr>
               </table>
-            </div>
-          </div>
 
-          <!--Split -->
-          <div class="fragment fade-up">
-            <font color="yellow">1. Split<br>
-              <span style="font-size: 25px">.groupby('Region')</span>
-            </font>
-            <div>
-              <div style="padding-top: 60px;">
+              <div class="fragment fade-right"
+                style="position: relative; top: -433px; left: 72px; width: 680px; height: 68px; border: 2px solid yellow; background-color: none">
+                <div style="position: absolute; top: 0px; left: -180px; color: yellow">
+                  Columns
+                </div>
+              </div>
+              <div class="fragment fade-up"
+                style="position: absolute; top: 0px; left: 480px; width: 150px; height: 85%; border: 2px solid yellow; background-color: none">
+                <div style="position: absolute; top: 103%; left: 20px; color: yellow">
+                  Series
+                </div>
+              </div>
+              <div class="fragment fade-up"
+                style="position: absolute; top: 71px; left: 0px; width: 70px; height: 71%; border: 2px solid yellow; background-color: none">
+                <div style="position: absolute; top: 103%; left: -15px; color: yellow">
+                  Index
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-markdown>
+            ### Pandas DataFrame
+            - 2 dimensional data structure
+            - It consists of
+            - Columns
+            - Series (potentially different data types)
+            - Index
+            - Think of it as:
+            - Excel Spreadsheet (on steroids)
+            - SQL Table
+            - Dictionary of Series objects
+          </section>
+
+          <section data-markdown>
+            ### Creating a DataFrame
+            - From dictionary
+            ```
+            import pandas as pd
+
+            data_dict = {"Country":["Afghanistan", "Angola"],
+            "Region": ["Asia", "Africa"] ,
+            "GDP": [1969, 6029],
+            "Age": [62, 64]}
+
+            df = pd.DataFrame(data_dict)
+            ```
+            - From Excel Spreadsheet
+            - From CSV File
+            - From database
+            - From API
+            - ...
+          </section>
+
+          <section>
+            Basic Operations
+          </section>
+
+          <section data-markdown>
+            Inspect DataFrame
+            ```
+            df.head(10) # First 10 elements
+            ```
+            ```
+            df.tail(10) # Last 10 elements
+            ```
+            ```
+            df.shape # Shape of the DataFrame
+            ```
+            ```
+            df.dtypes # Data types of columns (Series)
+            ```
+            Select single column (Series)
+            ```
+            df['Region']
+            ```
+            Select columns (DataFrame)
+            ```
+            df[['Region', 'GDP']]
+            ```
+          </section>
+          <section data-markdown>
+            Unique values of Series
+            ```
+            df['Region'].unique()
+            ```
+            Drop columns
+            ```
+            df.drop(columns=['ratio'])
+            ```
+            Rename columns
+            ```
+            df.rename(columns={"GDP": "gdp", "Age": "life_expectancy"})
+            ```
+          </section>
+          <section data-markdown>
+            Sort DataFrame
+            ```
+            df.sort_values(by='GDP', ascending=True)
+            ```
+            Filter by value
+            ```
+            df[df['Region'] == 'Asia']
+            ```
+            Filter by multiple values
+            ```
+            df[(df['Region'] == 'Asia') & (df['Age'] >= 80)]
+            ```
+          </section>
+          <section data-markdown>
+            Series arithmetics
+            ```
+            df['GDP'] * 100 # multiply each element with 100
+            ```
+            ```
+            df['GDP'].min()
+            df['GDP'].max()
+            ```
+            ```
+            df['GDP'].mean()
+            df['GDP'].median()
+            df['GDP'].quantile(0.5)
+            ```
+            Combine two Series
+            ```
+            df['GDP'] / df['Age'] # combine 2 columns
+            ```
+            Assign new column
+            ```
+            # Create column from other columns
+            df['ratio'] = df['GDP'] / df['Age']
+            # Create constant column
+            df['constant'] = 3.14
+            ```
+          </section>
+
+          <section>
+            Aggregation: the groupby clause
+          </section>
+          <section>
+            <div class="split-container">
+              <table style="font-size: 25px;">
+                <tr>
+                  <th>Country</th>
+                  <th>Region</th>
+                  <th>GDP</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Afghanistan</td>
+                  <td>Asia</td>
+                  <td>1969</td>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <td>Angola</td>
+                  <td>Africa</td>
+                  <td>6029</td>
+                  <td>64</td>
+                </tr>
+                <tr>
+                  <td>Albania</td>
+                  <td>Europe</td>
+                  <td>13278</td>
+                  <td>76</td>
+                </tr>
+                <tr>
+                  <td>Andorra</td>
+                  <td>Europe</td>
+                  <td>49728</td>
+                  <td>78</td>
+                </tr>
+                <tr>
+                  <td>Emirates</td>
+                  <td>Asia</td>
+                  <td>67383</td>
+                  <td>73</td>
+                </tr>
+              </table>
+              <div style="width:100%">
+                <div style="padding-bottom: 60px;">
+                  So far: <br>Arithmetics over all entries
+                  <pre><code data-trim>               
+            df['Age'].mean()
+            </code></pre>
+                  <span style="font-size: 25px; color: yellow">70.6</span>
+                  <div
+                    style="position: absolute; top: 180px; left: 340px; width: 50px; height: 300px; border: 2px solid yellow; background-color: none">
+                  </div>
+                </div>
+                <div class="fragment">
+                  Now: <br>
+                  Arithmetics over groups
+                  <pre><code data-trim>               
+            df.groupy('Region')['Age'].mean()
+            </code></pre>
+                  <table style="font-size: 25px; color: yellow">
+                    <tr>
+                      <th>Region</th>
+                      <th>Age</th>
+                    </tr>
+                    <tr>
+                      <td>Africa</td>
+                      <td>64</td>
+                    </tr>
+                    <tr>
+                      <td>Asia</td>
+                      <td>67.5</td>
+                    </tr>
+                    <tr>
+                      <td>Europe</td>
+                      <td>77</td>
+                    </tr>
+                  </table>
+                  <div
+                    style="position: absolute; top: 180px; left: 150px; width: 90px; height: 300px; border: 2px solid yellow; background-color: none">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="split-container">
+              <div>
+                <font color="yellow">DataFrame</font>
+                <div style="padding-top: 200px;">
+                  <table style="font-size: 25px;">
+                    <tr>
+                      <th>Region</th>
+                      <th>Age</th>
+                    </tr>
+                    <tr>
+                      <td>Asia</td>
+                      <td>62</td>
+                    </tr>
+                    <tr>
+                      <td>Africa</td>
+                      <td>64</td>
+                    </tr>
+                    <tr>
+                      <td>Europe</td>
+                      <td>76</td>
+                    </tr>
+                    <tr>
+                      <td>Europe</td>
+                      <td>78</td>
+                    </tr>
+                    <tr>
+                      <td>Asia</td>
+                      <td>73</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <!--Split -->
+              <div class="fragment fade-up">
+                <font color="yellow">1. Split<br>
+                  <span style="font-size: 25px">.groupby('Region')</span>
+                </font>
+                <div>
+                  <div style="padding-top: 60px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Africa</td>
+                        <td>64</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div style="padding-top: 60px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Asia</td>
+                        <td>62</td>
+                      </tr>
+                      <tr>
+                        <td>Asia</td>
+                        <td>73</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="padding-top: 60px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Europe</td>
+                        <td>76</td>
+                      </tr>
+                      <tr>
+                        <td>Europe</td>
+                        <td>78</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div style="margin-left: -130px; margin-top:-600px">
+                  <!--Arrows -->
+                  <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, -100) rotate(-45, 40, 335)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, -8)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform=" translate(0,150) rotate(45, 40, 335)" />
+                  </svg>
+                </div>
+              </div>
+              <!--Apply-->
+              <div class="fragment fade-up">
+                <div>
+                  <font color="yellow">2. Apply<br>
+                    <span style="font-size: 25px">.mean()</span>
+                  </font>
+                </div>
+                <div>
+                  <div style="padding-top: 60px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Africa</td>
+                        <td>64</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="padding-top: 60px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Asia</td>
+                        <td>67.5</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="padding-top: 103px;">
+                    <table style="font-size: 25px;">
+                      <tr>
+                        <th>Region</th>
+                        <th>Age</th>
+                      </tr>
+                      <tr>
+                        <td>Europe</td>
+                        <td>77</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div style="margin-left: -130px; margin-top:-600px">
+                  <!--Arrows -->
+                  <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, -110)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, 35)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform=" translate(0,225)" />
+                  </svg>
+                </div>
+              </div>
+              <!--Combine -->
+              <div class="fragment fade-up">
+                <font color="yellow">3. Combine</font>
+                <div style="padding-top: 230px;">
+                  <table style="font-size: 25px;">
+                    <tr>
+                      <th>Region</th>
+                      <th>Age</th>
+                    </tr>
+                    <tr>
+                      <td>Africa</td>
+                      <td>64</td>
+                    </tr>
+                    <tr>
+                      <td>Asia</td>
+                      <td>67.5</td>
+                    </tr>
+                    <tr>
+                      <td>Europe</td>
+                      <td>77</td>
+                    </tr>
+                  </table>
+                </div>
+                <div style="margin-left: -130px; margin-top:-468px">
+                  <!--Arrows -->
+                  <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, -90) rotate(45, 40, 335)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform="translate(0, 35)" />
+                    <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
+                      transform=" translate(0,200) rotate(-45, 40, 335)" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-markdown>
+            Avoid creating an index
+            ```
+            df.groupby('Region', as_index=False)['Age'].mean()
+            ```
+            Multiple groups
+            ```
+            df.groupby(['Region', 'Year'])['Age'].mean()
+            ```
+            Multiple aggregations + renaming
+            ```
+            df.groupby('Region').agg(age_mean=('Age', 'mean'),
+            age_max=('Age', 'max'),
+            age_min=('Age', 'min'))
+            ```
+          </section>
+          <section data-markdown>
+            ### Remember:
+            groupby = split + apply + combine
+
+          </section>
+
+          <section data-markdown>
+            ### Combining data sources
+            Imagine you have 2 DataFrames from different sources
+            You want to combine them in one DataFrame
+
+            **Join/Merge operation**
+          </section>
+
+          <section>
+            Inner join <br> Matching values on both tables
+            <div class="split-container">
+
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 1</font>
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
-                    <th>Age</th>
+                    <th>Country</th>
+                    <th>GDP</th>
                   </tr>
                   <tr>
-                    <td>Africa</td>
-                    <td>64</td>
+                    <td>Afghanistan</td>
+                    <td>1969</td>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
                   </tr>
                 </table>
               </div>
-
-              <div style="padding-top: 60px;">
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 2</font>
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
+                    <th>Country</th>
                     <th>Age</th>
                   </tr>
                   <tr>
-                    <td>Asia</td>
+                    <td>Afghanistan</td>
                     <td>62</td>
                   </tr>
                   <tr>
-                    <td>Asia</td>
+                    <td>Angola</td>
+                    <td>64</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
                     <td>73</td>
                   </tr>
                 </table>
               </div>
-              <div style="padding-top: 60px;">
+              <div>
+                <font color="yellow" style="font-size: 25px;">Result</font>
+
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
+                    <th>Country</th>
+                    <th>GDP</th>
                     <th>Age</th>
                   </tr>
                   <tr>
-                    <td>Europe</td>
+                    <td>Afghanistan</td>
+                    <td>1969</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                    <td>64</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
                     <td>76</td>
                   </tr>
                   <tr>
-                    <td>Europe</td>
+                    <td>Andorra</td>
+                    <td>49728</td>
                     <td>78</td>
                   </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                    <td>73</td>
+                  </tr>
                 </table>
               </div>
             </div>
-            <div style="margin-left: -130px; margin-top:-600px">
-              <!--Arrows -->
-              <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, -100) rotate(-45, 40, 335)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, -8)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform=" translate(0,150) rotate(45, 40, 335)" />
-              </svg>
+            <!--             <div
+              style="position: absolute; top: 100px; left: 5px; width: 130px; height: 300px; border: 2px solid yellow; background-color: none">
+            </div> -->
+            <div style="padding-top: 20px;">
+              <pre><code data-trim>
+              result = df1.merge(df2, on='Country', how='inner')
+            </code></pre>
             </div>
-          </div>
-          <!--Apply-->
-          <div class="fragment fade-up">
-            <div>
-              <font color="yellow">2. Apply<br>
-                <span style="font-size: 25px">.mean()</span>
-              </font>
-            </div>
-            <div>
-              <div style="padding-top: 60px;">
+          </section>
+
+          <section>
+            Inner join <br> Matching values on both tables
+            <div class="split-container">
+
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 1</font>
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
+                    <th>Country</th>
+                    <th>GDP</th>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Afghanistan</s></td>
+                    <td><s style="color: yellow">1969</s></td>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 2</font>
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
                     <th>Age</th>
                   </tr>
                   <tr>
-                    <td>Africa</td>
-                    <td>64</td>
+                    <td>Afghanistan</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Angola</s></td>
+                    <td><s style="color: yellow">64</s></td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>73</td>
                   </tr>
                 </table>
               </div>
-              <div style="padding-top: 60px;">
+              <div>
+                <font color="yellow" style="font-size: 25px;">Result</font>
+
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
+                    <th>Country</th>
+                    <th>GDP</th>
                     <th>Age</th>
                   </tr>
                   <tr>
-                    <td>Asia</td>
-                    <td>67.5</td>
+                    <td>Albania</td>
+                    <td>13278</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                    <td>73</td>
                   </tr>
                 </table>
               </div>
-              <div style="padding-top: 103px;">
+            </div>
+            <div style="padding-top: 20px;">
+              <pre><code data-trim>
+              result = df1.merge(df2, on='Country', how='inner')
+            </code></pre>
+            </div>
+          </section>
+
+          <section>
+            Left join <br> All records from left and matching values from right 
+            <div class="split-container">
+
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 1</font>
                 <table style="font-size: 25px;">
                   <tr>
-                    <th>Region</th>
+                    <th>Country</th>
+                    <th>GDP</th>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Afghanistan</s></td>
+                    <td><s style="color: yellow">1969</s></td>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 2</font>
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
                     <th>Age</th>
                   </tr>
                   <tr>
-                    <td>Europe</td>
-                    <td>77</td>
+                    <td>Afghanistan</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Angola</s></td>
+                    <td><s style="color: yellow">64</s></td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>73</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <font color="yellow" style="font-size: 25px;">Result</font>
+
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
+                    <th>GDP</th>
+                    <th>Age</th>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                    <td>Nan</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                    <td>73</td>
                   </tr>
                 </table>
               </div>
             </div>
-            <div style="margin-left: -130px; margin-top:-600px">
-              <!--Arrows -->
-              <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, -110)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, 35)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform=" translate(0,225)" />
-              </svg>
+            <div style="padding-top: 20px;">
+              <pre><code data-trim>
+              result = df1.merge(df2, on='Country', how='inner')
+            </code></pre>
             </div>
-          </div>
-          <!--Combine -->
-          <div class="fragment fade-up">
-            <font color="yellow">3. Combine</font>
-            <div style="padding-top: 230px;">
-              <table style="font-size: 25px;">
-                <tr>
-                  <th>Region</th>
-                  <th>Age</th>
-                </tr>
-                <tr>
-                  <td>Africa</td>
-                  <td>64</td>
-                </tr>
-                <tr>
-                  <td>Asia</td>
-                  <td>67.5</td>
-                </tr>
-                <tr>
-                  <td>Europe</td>
-                  <td>77</td>
-                </tr>
-              </table>
+          </section>
+
+          <section>
+            Right join <br> All records from right and matching values from left 
+            <div class="split-container">
+
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 1</font>
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
+                    <th>GDP</th>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Afghanistan</s></td>
+                    <td><s style="color: yellow">1969</s></td>
+                  </tr>
+                  <tr>
+                    <td>Angola</td>
+                    <td>6029</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <font color="yellow" style="font-size: 25px;">df 2</font>
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
+                    <th>Age</th>
+                  </tr>
+                  <tr>
+                    <td>Afghanistan</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td><s style="color: yellow">Angola</s></td>
+                    <td><s style="color: yellow">64</s></td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>73</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <font color="yellow" style="font-size: 25px;">Result</font>
+
+                <table style="font-size: 25px;">
+                  <tr>
+                    <th>Country</th>
+                    <th>GDP</th>
+                    <th>Age</th>
+                  </tr>
+                  <tr>
+                    <td>Afghanistan</td>
+                    <td>Nan</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td>Albania</td>
+                    <td>13278</td>
+                    <td>76</td>
+                  </tr>
+                  <tr>
+                    <td>Andorra</td>
+                    <td>49728</td>
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td>Emirates</td>
+                    <td>67383</td>
+                    <td>73</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <div style="margin-left: -130px; margin-top:-468px">
-              <!--Arrows -->
-              <svg width="200" height="8000" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, -90) rotate(45, 40, 335)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform="translate(0, 35)" />
-                <polygon points="10,330 55,330 55,329 65,332 55,335 55,334 10,334" fill="yellow"
-                  transform=" translate(0,200) rotate(-45, 40, 335)" />
-              </svg>
+            <div style="padding-top: 20px;">
+              <pre><code data-trim>
+              result = df1.merge(df2, on='Country', how='inner')
+            </code></pre>
             </div>
-          </div>
-        </div>
-      </section>
-      <section data-markdown>
-        Avoid creating an index
-        ```
-        df.groupby('Region', as_index=False)['Age'].mean()
-        ```
-        Multiple groups
-        ```
-        df.groupby(['Region', 'Year'])['Age'].mean()
-        ```
-        Multiple aggregations + renaming
-        ```
-        df.groupby('Region').agg(age_mean=('Age', 'mean'),
-                                 age_max=('Age', 'max'),
-                                 age_min=('Age', 'min'))
-        ```
-      </section>
-      <section data-markdown>
-        ### Remember:
-        groupby = split + apply + combine
-
-      </section>
-
-      <section>
-        Combining data sources
-      </section>
-
+          </section>
 
 
     </div>

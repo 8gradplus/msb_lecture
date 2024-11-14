@@ -1,8 +1,8 @@
-### Historical example
+<!-- ### Historical example
 
 - https://en.wikipedia.org/wiki/Jim_Simons
 
----
+--- -->
 
 ### Example <span style="color: red;">Netflix</span>
 
@@ -46,27 +46,12 @@ Here we should have a discussion and find a lot of ideas why netflix might colle
 
 --
 
-<span style="color: lightgreen;">What are business relevant questions for netflix?</span>
+- <span style="color: lightgreen;">What are business relevant questions for netflix?</span>
+- <span style="color: lightgreen;">What (data) do we need to answer those questions?</span>
+- <span style="color: lightgreen;">Where do we get this information from?</span>
+- <span style="color: lightgreen;">Who needs access to this information?</span>
 
 Note: put some on the whiteboard
-
---
-
-<span style="color: lightgreen;">What do we need to answer those questions?</span>
-
-Note: put on the whiteboard
-
---
-
-<span style="color: lightgreen;">Where do we get this information from?</span>
-
-Note: put on the whiteboard
-
---
-
-<span style="color: lightgreen;">Who needs access to this information?</span>
-
-Note: put on the whiteboard
 
 --
 
@@ -570,11 +555,11 @@ Hints for Students in Company 2’s Analysis:
     •	The diversity in metrics and reporting preferences indicates a misalignment in business objectives, hinting at the business-data disconnect.
     •	The mention of leaders being interested in BI but no specific follow-through hints subtly at a decision-action gap—suggesting a gap between expressed interest and actual utilization.
 
----
-
+<!-- --- -->
+<!--
 Notes
 
 # todo vat
 
 - jim simons slides
-- add netflix challenge as seminal ai/bi story
+- add netflix challenge as seminal ai/bi story -->

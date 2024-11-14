@@ -515,7 +515,7 @@ You are a consultant who has been asked by a company to help them evaluate their
 
 --
 
-**Company 1: DataPro Solutions**
+**Company: DataPro Solutions**
 
 <span style="font-size: 25px">
 Description:
@@ -525,16 +525,14 @@ DataPro Solutions has been a player in the software solutions industry for over 
 Each department has its own data system optimized for its specific needs, and while teams occasionally exchange reports, they usually work independently. Upper management often drives decisions based on intuition and experience, viewing BI as a supportive tool rather than a fundamental part of decision-making. The company operates on a fairly tight budget, resulting in occasional limitations on software upgrades. Meanwhile, a few departments have adopted their own ad hoc data practices using various tools outside the official BI platform, hoping to meet their unique reporting needs.
 </span>
 
-Note:
-
-Hints for Students in Company 1’s Analysis:
-
-    •	The separate data systems across departments can lead to data silos, although it isn’t explicitly stated.
-    •	The emphasis on management’s intuition-based decision-making points subtly to a lack of a data-driven culture.
-    •	Limited resources hint that technology constraints might prevent the company from updating critical systems for BI.
-    •	The ad hoc data practices adopted by certain departments suggest shadow BI without directly stating it.
-
 --
+
+- The separate data systems across departments can lead to data silos, although it isn’t explicitly stated.
+- The emphasis on management’s intuition-based decision-making points subtly to a lack of a data-driven culture.
+- Limited resources hint that technology constraints might prevent the company from updating critical systems for BI.
+- The ad hoc data practices adopted by certain departments suggest shadow BI without directly stating it.
+
+<!-- --
 
 **Company 2: GreenGrow Industries**
 
@@ -553,7 +551,7 @@ Hints for Students in Company 2’s Analysis:
     •	The variation in data interpretation hints at a business-data disconnect and communication gaps, as departments may not have a unified BI focus.
     •	The challenge in meeting departmental requests suggests the potential for data silos, where each department relies on tailored, sometimes isolated insights.
     •	The diversity in metrics and reporting preferences indicates a misalignment in business objectives, hinting at the business-data disconnect.
-    •	The mention of leaders being interested in BI but no specific follow-through hints subtly at a decision-action gap—suggesting a gap between expressed interest and actual utilization.
+    •	The mention of leaders being interested in BI but no specific follow-through hints subtly at a decision-action gap—suggesting a gap between expressed interest and actual utilization. -->
 
 <!-- --- -->
 <!--

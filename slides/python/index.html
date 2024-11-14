@@ -351,13 +351,13 @@
             ### Pandas DataFrame
             - 2 dimensional data structure
             - It consists of
-            - Columns
-            - Series (potentially different data types)
-            - Index
+              - Columns
+              - Series (potentially different data types)
+              - Index
             - Think of it as:
-            - Excel Spreadsheet (on steroids)
-            - SQL Table
-            - Dictionary of Series objects
+              - Excel Spreadsheet (on steroids)
+              - SQL Table
+              - Dictionary of Series objects
           </section>
 
           <section data-markdown>
@@ -1071,7 +1071,7 @@
             </div>
             <div style="padding-top: 20px;">
               <pre><code data-trim>
-              result = df1.merge(df2, on='Country', how='inner')
+              result = df1.merge(df2, on='Country', how='left')
             </code></pre>
             </div>
           </section>
@@ -1172,10 +1172,57 @@
             </div>
             <div style="padding-top: 20px;">
               <pre><code data-trim>
-              result = df1.merge(df2, on='Country', how='inner')
+              result = df1.merge(df2, on='Country', how='right')
             </code></pre>
             </div>
           </section>
+
+
+        <section>
+          Data visualization with Matplotlib
+        </section>
+
+        <section data-markdown>
+          Assume you have a DataFrame with columns year, GDP
+          Line plot GDP over year
+
+          ```
+          from matplotlib import pyplot as plt
+          fig, ax = plt.subplots(figsize=(15,4)) # figsize is optional
+          ax.plot(df['year'], df['GDP'])
+          ax.set_xlabel('Year')
+          ax.set_ylabel('GDP')
+          ```
+
+          There are many available plot styles, e.g.
+          ```
+          ax.plot # Line plot
+          ax.bar # Bar plot
+          ax.scatter # Scatter plot
+          ```
+        </section>
+
+        <section data-markdown>
+          Multiple (2) plots with shared x Scale 
+
+          ```
+          from matplotlib import pyplot as plt
+          fig, ax = plt.subplots(nrows=2, sharex=True, figsize=(15,4)) # figsize is optional
+          ax[0].plot(df['year'], df['GDP'])
+          ax[0].set_xlabel('Year')
+          ax[0].set_ylabel('GDP')
+          ax[1].plot(df['year'], df['Age'])
+          ax[1].set_xlabel('Year')
+          ax[1].set_ylabel('Age')
+          ```
+
+          There are many available plot styles, e.g.
+          ```
+          ax.plot # Line plot
+          ax.bar # Bar plot
+          ax.scatter # Scatter plot
+          ```
+        </section>
 
 
     </div>

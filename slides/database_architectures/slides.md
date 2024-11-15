@@ -89,7 +89,7 @@ What is a data base?
 What is it good for?
 
 - efficient <span style="color: yellow;">CRUD</span> operations
-- <span style="color: yellow;">ACID</span> criteria guarantee
+- <span style="color: yellow;">ACID</span> criteria guarantee on transitions
 - storage efficiency
 - scalability
 
@@ -247,11 +247,12 @@ Remember: no free lunch theorem
 
 ---
 
-<h3><span style="color: orange;">ACID</span></h>
+<h3><span style="color: orange;">Transactions & ACID guarantees</span></h>
 
 ---
 
-- What are ACID transactions?
+- What is a transaction?
+- What are ACID criteria?
 - Why are they important?
 - What are the single parts of ACID?
 - What is an example for each of those parts?
@@ -370,23 +371,7 @@ Remember: no free lunch theorem
 
 ---
 
-<h3><span style="color: orange;">Meta data</span></h>
-
----
-
-<span style="color: lightgreen;">Prepare for a little question round using the wikipedia article about [metadata](https://en.wikipedia.org/wiki/Metadata)</span>!
-
---
-
-<span style="color: lightgreen;">Describe in your own words what metadata is. Is it exclusively defined for databases?</span>
-
---
-
-<span style="color: lightgreen;">What categories exist and are they relevant for databases? Try to find examples regarding databases.</span>
-
---
-
-<span style="color: lightgreen;">...</span>
+<h3><span style="color: orange;">Database Metadata</span></h>
 
 --
 
@@ -533,6 +518,20 @@ The customer, order and product chain. Let's be a data engineer.
 
 --
 
+Products
+
+| <span style="color: orange;">product_id</span> | color  | weight | ... |
+| ---------------------------------------------- | ------ | ------ | --- |
+| 1                                              | red    | 12.8   | ... |
+| 2                                              | orange | 9.56   | ... |
+| 3                                              | yellow | 3.98   | ... |
+| ...                                            | ...    | ...    | ... |
+
+- <span style="color: orange;">Primary Key</span>
+- <span style="color: yellow;">Foreign Key</span>
+
+--
+
 Order - Customer - Relation
 
 | <span style="color: orange;">order_id</span> | <span style="color: yellow;">customer_id</span> | date       | gross costs |
@@ -558,12 +557,6 @@ Order - Product - Relation
 
 - <span style="color: orange;">Primary Key</span>
 - <span style="color: yellow;">Foreign Key</span>
-
---
-
----
-
-<span style="color: red;">Homework: What other key types exists? Explain them!</span>
 
 ---
 
@@ -636,16 +629,118 @@ Order - Product - Relation
 
 <span style="color: orange;">Document Databases</span>
 
-- one of the main categories of NoSQL databases
+- one of the main representative of NoSQL databases
+- instead of using table like structures, we are using **documents**
 
----
+--
 
-<span style="color: orange;">Graph Databases</span>
+**An entry in a document database is called document**
+
+- typically it is represented as **json** when querying the database
+
+```json
+{
+  "firstName": "Bob",
+  "lastName": "Smith",
+  "address": {
+    "type": "Home",
+    "street1": "5 Oak St.",
+    "city": "Boys",
+    "state": "AR",
+    "zip": "32225",
+    "country": "US"
+  }
+}
+```
+
+<span style="color: lightgreen;">Does that bring back memories?</span>
+
+--
+
+- sometimes also as **xml** file format
+
+```xml
+<contact>
+  <firstname>Bob</firstname>
+  <lastname>Smith</lastname>
+  <address>
+    <type>Home</type>
+    <street1>123 Back St.</street1>
+    <city>Boys</city>
+    <state>AR</state>
+    <zip>32225</zip>
+    <country>US</country>
+  </address>
+</contact>
+```
+
+--
+
+- or something else :)
+- it doesn't matter
+
+--
+
+<span style="color: orange;">**BUT WHY** document based databases when having RDBs?</span>
+
+--
+
+**Flexible Schema**
+
+- Document DB: Schema-less or schema-flexible; documents can have different fields without predefined constraints.
+- RDBMS: Requires a predefined schema (tables, columns, and data types). Changes often necessitate migrations, which can be time-consuming.
+
+Use Case: Applications with evolving requirements where the data model frequently changes, such as content management systems or user profiles.
+
+--
+
+**Hierarchical and Nested Data**
+
+- Document DB: Supports storing nested data (JSON, BSON, XML), allowing for hierarchical structures.
+- RDBMS: Requires normalization into multiple tables with joins to represent nested relationships.
+
+Use Case: E-commerce platforms storing product details, attributes, and reviews in a single document.
+
+--
+
+**Scalability**
+
+- Document DB: Built for horizontal scaling; easier to distribute across multiple nodes for high availability and performance.
+- RDBMS: Typically scales vertically (adding resources to a single machine). Sharding and replication can be complex.
+
+Use Case: Large-scale applications needing distributed, high-availability setups, such as social media or IoT platforms.
+
+--
+
+**Performance for Specific Queries**
+
+- Document DB: Optimized for read and write operations on hierarchical or key-value structures, often avoiding joins.
+- RDBMS: Joins and complex queries can lead to performance bottlenecks in high-traffic applications.
+
+Use Case: Applications with frequent reads and writes for semi-structured data, such as logging or analytics systems.
+
+--
+
+**Developer Productivity**
+
+- Document DB: Easy to map application objects (e.g., JSON) directly into the database.
+- RDBMS: Often requires additional layers to translate objects into relational tables.
+
+Use Case: Rapid development environments like agile projects or startups.
+
+--
+
+**Sounds like RDBs are needless ... no they should be used when you have**
+
+- strong transactional requirements (ACID compliance).
+- complex querying with heavy reliance on joins or aggregations.
+- data models that are stable and consistent over time.
 
 ---
 
 #### Others
 
+- Graph Databases
 - Key-Value Stores
 - Column-Family Databases
 - Time-Series Databases
@@ -673,13 +768,10 @@ The [Stackoverflow Survey](https://survey.stackoverflow.co/2023/#most-popular-te
 The choice depends on <span style="color: orange;">usecases</span>:
 
 - Do I have a fixed schema?
+- Do I have nested structures?
 - Is my data dense?
-- What about images and other binary / unstructured data?
-
----
-
-Short excursion: <span style="color: orange;">Object storages</span>
-
-https://blog.min.io/databases-for-object-storage/
+- Do I need strong ACID criterias?
+- **What about images and other binary / unstructured data?**
+- ...
 
 ---

@@ -163,6 +163,22 @@
             sum(my_list) # 6
             len(my_list) # 3 
           </code></pre>
+          </section>
+          <section>
+            Remark. These are function calls
+            <pre><code data-trim data-noescape>      
+              print("Hello World")
+              min(my_list)  
+              max(my_list) 
+              sum(my_list) 
+              len(my_list) 
+            </code></pre>
+            General  function call  
+            <pre><code data-trim data-noescape>      
+              function(param1, param2, ...) 
+            </code></pre>
+
+          </section>
         </section>
         <section>
           Iterate through list with for loop
@@ -215,7 +231,7 @@
           # indention matters print("Value is larger 3") ``` </section>
           <section>
             <section>
-              <h2>Functions</h2>
+              <h2>Write functions</h2>
 
               <ul>
                 <li>A function is a block of code which only runs when it is called.</li>
@@ -233,19 +249,14 @@
           </code></pre>
             </section>
             <section>
-              Hello world as function
-              <pre><code data-trim>               
-          def print_something(string):
-              print(string)
-          print_something("Hello World")
-          </code></pre>
+
               Add two numbers
               <pre><code data-trim>               
             def add_numbers(x, y):
                 return x + y
             add_numbers(3, 4) # 7
             </code></pre>
-              Defaul values
+              Default values
               <pre><code data-trim>               
             def add_numbers(x, y=1):
                 return x + y
@@ -976,7 +987,7 @@
           </section>
 
           <section>
-            Left join <br> All records from left and matching values from right 
+            Left join <br> All records from left and matching values from right
             <div class="split-container">
 
               <div>
@@ -1077,7 +1088,7 @@
           </section>
 
           <section>
-            Right join <br> All records from right and matching values from left 
+            Right join <br> All records from right and matching values from left
             <div class="split-container">
 
               <div>
@@ -1178,51 +1189,51 @@
           </section>
 
 
-        <section>
-          Data visualization with Matplotlib
-        </section>
+          <section>
+            Data visualization with Matplotlib
+          </section>
 
-        <section data-markdown>
-          Assume you have a DataFrame with columns year, GDP
-          Line plot GDP over year
+          <section data-markdown>
+            Assume you have a DataFrame with columns year, GDP
+            Line plot GDP over year
 
-          ```
-          from matplotlib import pyplot as plt
-          fig, ax = plt.subplots(figsize=(15,4)) # figsize is optional
-          ax.plot(df['year'], df['GDP'])
-          ax.set_xlabel('Year')
-          ax.set_ylabel('GDP')
-          ```
+            ```
+            from matplotlib import pyplot as plt
+            fig, ax = plt.subplots(figsize=(15,4)) # figsize is optional
+            ax.plot(df['year'], df['GDP'])
+            ax.set_xlabel('Year')
+            ax.set_ylabel('GDP')
+            ```
 
-          There are many available plot styles, e.g.
-          ```
-          ax.plot # Line plot
-          ax.bar # Bar plot
-          ax.scatter # Scatter plot
-          ```
-        </section>
+            There are many available plot styles, e.g.
+            ```
+            ax.plot # Line plot
+            ax.bar # Bar plot
+            ax.scatter # Scatter plot
+            ```
+          </section>
 
-        <section data-markdown>
-          Multiple (2) plots with shared x Scale 
+          <section data-markdown>
+            Multiple (2) plots with shared x Scale
 
-          ```
-          from matplotlib import pyplot as plt
-          fig, ax = plt.subplots(nrows=2, sharex=True, figsize=(15,4)) # figsize is optional
-          ax[0].plot(df['year'], df['GDP'])
-          ax[0].set_xlabel('Year')
-          ax[0].set_ylabel('GDP')
-          ax[1].plot(df['year'], df['Age'])
-          ax[1].set_xlabel('Year')
-          ax[1].set_ylabel('Age')
-          ```
+            ```
+            from matplotlib import pyplot as plt
+            fig, ax = plt.subplots(nrows=2, sharex=True, figsize=(15,4)) # figsize is optional
+            ax[0].plot(df['year'], df['GDP'])
+            ax[0].set_xlabel('Year')
+            ax[0].set_ylabel('GDP')
+            ax[1].plot(df['year'], df['Age'])
+            ax[1].set_xlabel('Year')
+            ax[1].set_ylabel('Age')
+            ```
 
-          There are many available plot styles, e.g.
-          ```
-          ax.plot # Line plot
-          ax.bar # Bar plot
-          ax.scatter # Scatter plot
-          ```
-        </section>
+            There are many available plot styles, e.g.
+            ```
+            ax.plot # Line plot
+            ax.bar # Bar plot
+            ax.scatter # Scatter plot
+            ```
+          </section>
 
 
     </div>

@@ -1,3 +1,17 @@
+Where are we located during the lecture?
+
+<img
+  src="../assets/database_architectures/imgs/imgs.013.png"
+  alt="Overview"
+  style="
+    width: 800px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
+
+---
+
 Is a file system all you need to store information?
 
 <img
@@ -9,9 +23,6 @@ Is a file system all you need to store information?
     background: transparent;
   "
 />
-
-Note:
-ask for: what is the task of a file system (see next slide)
 
 ---
 
@@ -89,7 +100,7 @@ What is a data base?
 What is it good for?
 
 - efficient <span style="color: yellow;">CRUD</span> operations
-- <span style="color: yellow;">ACID</span> criteria guarantee
+- <span style="color: yellow;">ACID</span> criteria guarantee on transitions
 - storage efficiency
 - scalability
 
@@ -159,9 +170,11 @@ Complexity (Linear Search)
 | ------------------------------------------ | ------------------------------------------ |
 | <span style="color: yellow;">_O_(n)</span> | <span style="color: yellow;">_O_(1)</span> |
 
-Note:
+--
 
-Give an intuitive understanding of `the big O notation`
+Wait what??? What's this <span style="color: orange;">`big O notation`</span>?
+
+<span style="color: lightgreen;">Ask chatGPT or gemini for a simple explanation!</span>
 
 --
 
@@ -216,9 +229,7 @@ Complexity (Binary Search)
 
 --
 
-Tada, that's what we call an index, but
-
-TODO: binary / B Tree search
+Tada, that's what we call an index!
 
 --
 
@@ -234,6 +245,13 @@ Remember: no free lunch theorem
 
 --
 
+We need an auxiliary table, which
+
+1. needs to be kept up to date (so inserts and updates might take a little more time)
+2. which costs storage capacity
+
+<!-- --
+
 <img
   src="../assets/database_architectures/imgs/imgs.004.png"
   alt="Overview"
@@ -243,15 +261,16 @@ Remember: no free lunch theorem
     padding-right: 0rem;
     background: transparent;
   "
-/>
+/> -->
 
 ---
 
-<h3><span style="color: orange;">ACID</span></h>
+<h3><span style="color: orange;">Transactions & ACID guarantees</span></h>
 
 ---
 
-- What are ACID transactions?
+- What is a transaction?
+- What are ACID criteria?
 - Why are they important?
 - What are the single parts of ACID?
 - What is an example for each of those parts?
@@ -370,23 +389,7 @@ Remember: no free lunch theorem
 
 ---
 
-<h3><span style="color: orange;">Meta data</span></h>
-
----
-
-<span style="color: lightgreen;">Prepare for a little question round using the wikipedia article about [metadata](https://en.wikipedia.org/wiki/Metadata)</span>!
-
---
-
-<span style="color: lightgreen;">Describe in your own words what metadata is. Is it exclusively defined for databases?</span>
-
---
-
-<span style="color: lightgreen;">What categories exist and are they relevant for databases? Try to find examples regarding databases.</span>
-
---
-
-<span style="color: lightgreen;">...</span>
+<h3><span style="color: orange;">Database Metadata</span></h>
 
 --
 
@@ -411,14 +414,15 @@ Remember: no free lunch theorem
 
 <span style="color: orange;">**Primary Keys**</span>
 
-... typically a **unique** index, but why?
+... typically a **unique** index, i.e. the values in a column defined as primary key exists exactly once. There are no duplicated values!
+
+But why?
 
 --
 
 <span style="color: orange;">Ensuring Uniqueness</span>
 
 - A primary key uniquely identifies each row in a table, ensuring that there are no duplicate rows. This is crucial for tables that represent entities with distinct identities (e.g., users, products, orders), as it helps prevent data redundancy and ambiguity.
-- Without a primary key, it can be challenging to distinguish between records, particularly if two or more rows have identical values across all columns.
 
 --
 
@@ -513,7 +517,7 @@ The customer, order and product chain. Let's be a data engineer.
 | 3           | Peter      | Parker    |
 | ...         | ...        | ...       |
 
-<span style="color: lightgreen;">Given a customer table, what should the primary key? Do we need a foreign key?</span>
+<span style="color: lightgreen;">Given a customer table, what should the primary key?</span>
 
 --
 
@@ -525,11 +529,24 @@ The customer, order and product chain. Let's be a data engineer.
 | ...                                             | ...        | ...       |
 
 - <span style="color: orange;">Primary Key</span>
-- <span style="color: yellow;">Foreign Key</span>
 
 --
 
-<span style="color: lightgreen;">Create some fictitious tables with to goal to efficiently combine orders with customers and products. Define primary and foreign keys for each of the designed tables.</span>
+<span style="color: lightgreen;">Create some fictitious tables for an online shop, with to goal to efficiently combine orders with customers and products. Define primary and foreign keys for each of the designed tables.</span>
+
+--
+
+Products
+
+| <span style="color: orange;">product_id</span> | color  | weight | ... |
+| ---------------------------------------------- | ------ | ------ | --- |
+| 1                                              | red    | 12.8   | ... |
+| 2                                              | orange | 9.56   | ... |
+| 3                                              | yellow | 3.98   | ... |
+| ...                                            | ...    | ...    | ... |
+
+- <span style="color: orange;">Primary Key</span>
+- <span style="color: yellow;">Foreign Key</span>
 
 --
 
@@ -561,9 +578,7 @@ Order - Product - Relation
 
 --
 
----
-
-<span style="color: red;">Homework: What other key types exists? Explain them!</span>
+That's also what we call a data model!
 
 ---
 
@@ -608,11 +623,11 @@ Order - Product - Relation
 
 --
 
-**Data Relationships in Relational Databases**
+**Data Table Relationships in Relational Databases**
 
 - <span style="color: orange;">One-to-One Relationship</span>: Each record in Table A is linked to one in Table B.
 - <span style="color: orange;">One-to-Many Relationship</span>: A single record in Table A relates to multiple records in Table B.
-- <span style="color: orange;">Many-to-Many Relationship</span>: Records in Table A relate to multiple records in Table B (typically using a linking table).
+- <span style="color: orange;">Many-to-Many Relationship</span>: Records in Table A relate to multiple records in Table B, typically using a linking table. (Remember Order - Product - Relation Table)
 
 --
 
@@ -620,6 +635,8 @@ Order - Product - Relation
 
 - order to product
 - product to order
+- customer to order
+- user to user-profile
 - product to manufacturer
 - advertisement to product
 
@@ -630,22 +647,124 @@ Order - Product - Relation
 - Core SQL Standard: defines features the rdb should support, e.g. SELECT, INSERT, UPDATE or DELETE
 - ANSI/ISO has released multiple versions of SQL over the years: SQL-86, SQL-89, ..., SQL:2023
 - Additional Vendor Specific Extensions, e.g. Postgres, Mysql, ...
-- **However:** <span style="color: orange;">We concentrate on Pandas. Why? Because Pandas is powerful and more intuitive for beginners!</span>
+- **However:** <span style="color: orange;">We concentrate on Pandas. Why? Because Pandas is powerful and more intuitive for beginners...and much k3wl3r!</span>
 
 ---
 
 <span style="color: orange;">Document Databases</span>
 
-- one of the main categories of NoSQL databases
+- one of the main representative of NoSQL databases
+- instead of using table like structures, we are using **documents**
 
----
+--
 
-<span style="color: orange;">Graph Databases</span>
+**An entry in a document database is called document**
+
+- typically it is represented as **json** when querying the database
+
+```json
+{
+  "firstName": "Bob",
+  "lastName": "Smith",
+  "address": {
+    "type": "Home",
+    "street1": "5 Oak St.",
+    "city": "Boys",
+    "state": "AR",
+    "zip": "32225",
+    "country": "US"
+  }
+}
+```
+
+<span style="color: lightgreen;">Does that bring back memories?</span>
+
+--
+
+- sometimes also as **xml** file format
+
+```xml
+<contact>
+  <firstname>Bob</firstname>
+  <lastname>Smith</lastname>
+  <address>
+    <type>Home</type>
+    <street1>123 Back St.</street1>
+    <city>Boys</city>
+    <state>AR</state>
+    <zip>32225</zip>
+    <country>US</country>
+  </address>
+</contact>
+```
+
+--
+
+- or something else :)
+- it doesn't matter
+
+--
+
+<span style="color: orange;">**BUT WHY** document based databases when having RDBs?</span>
+
+--
+
+**Flexible Schema**
+
+- Document DB: Schema-less or schema-flexible; documents can have different fields without predefined constraints.
+- RDB: Requires a predefined schema (tables, columns, and data types). Changes often necessitate migrations, which can be time-consuming.
+
+Use Case: Applications with evolving requirements where the data model frequently changes, such as content management systems or user profiles.
+
+--
+
+**Hierarchical and Nested Data**
+
+- Document DB: Supports storing nested data (JSON, BSON, XML), allowing for hierarchical structures.
+- RDB: Requires normalization into multiple tables with joins to represent nested relationships.
+
+Use Case: E-commerce platforms storing product details, attributes, and reviews in a single document.
+
+--
+
+**Scalability**
+
+- Document DB: Built for horizontal scaling; easier to distribute across multiple nodes for high availability and performance.
+- RDB: Typically scales vertically (adding resources to a single machine). Sharding and replication can be complex.
+
+Use Case: Large-scale applications needing distributed, high-availability setups, such as social media or IoT platforms.
+
+--
+
+**Performance for Specific Queries**
+
+- Document DB: Optimized for read and write operations on hierarchical or key-value structures, often avoiding joins.
+- RDB: Joins and complex queries can lead to performance bottlenecks in high-traffic applications.
+
+Use Case: Applications with frequent reads and writes for semi-structured data, such as logging or analytics systems.
+
+--
+
+**Developer Productivity**
+
+- Document DB: Easy to map application objects (e.g., JSON) directly into the database.
+- RDB: Often requires additional layers to translate objects into relational tables.
+
+Use Case: Rapid development environments like agile projects or startups.
+
+--
+
+**Sounds like RDBs are needless ... no they should be used when you have**
+
+- strong transactional requirements (ACID compliance).
+- complex querying with heavy reliance on joins or aggregations.
+- data models that are stable and consistent over time.
 
 ---
 
 #### Others
 
+- Graph Databases
 - Key-Value Stores
 - Column-Family Databases
 - Time-Series Databases
@@ -673,13 +792,8 @@ The [Stackoverflow Survey](https://survey.stackoverflow.co/2023/#most-popular-te
 The choice depends on <span style="color: orange;">usecases</span>:
 
 - Do I have a fixed schema?
+- Do I have nested structures?
 - Is my data dense?
-- What about images and other binary / unstructured data?
-
----
-
-Short excursion: <span style="color: orange;">Object storages</span>
-
-https://blog.min.io/databases-for-object-storage/
-
----
+- Do I need strong ACID criterias?
+- **What about images and other binary / unstructured data?**
+- ...

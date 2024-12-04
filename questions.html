@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Page</title>
+    <style>
+        /* General Reset */
+        body,
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff385c;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        /* Section headers */
+        .section-header {
+            color: #ff385c;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 2rem 1rem 1rem;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .qa-item {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 1rem;
+        }
+
+        .qa-item:last-child {
+            border-bottom: none;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .answer p {
+            margin: 1rem 0 0;
+        }
+
+        /* Icons for expand/collapse */
+        .icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Questions & Answers</h1>
+    </header>
+
+    <main class="container">
+        <div>
+            <!-- Business Intelligence -->
+            <div class="section-header">Buisiness Intelligence</div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>Is this a question?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>This is the answer.</p>
+                </div>
+            </div>
+
+            <!-- Database Architecture -->
+            <div class="section-header">Database Architecture</div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>Is this a question?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>This is the answer.</p>
+                </div>
+            </div>
+
+            <!-- Python -->
+            <div class="section-header">Python</div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>What is Python?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>Python is a programming language commonly used for buisiness intelligence, data science and
+                        artificial intelligence tasks.</p>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>What is Pandas?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>Pandas is a Python library for data aggregation.</p>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>What is Matplotlib?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>Matplotlib is a Python library for data visualization.</p>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>Can Python be used for aritificial intelligence tasks?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>Yes, Python can be used for artificial intelligence tasks. In particular, there are libraries such as pytorch or tensorflow for neural networks.</p>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>What is a Group By?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>The group by clause is a combination of split-apply-combine. 
+                        First the data are split into groups. 
+                        Then for each group an aggregation function is applied. Finally the aggregated groups are combined.
+                     </p>
+                </div>
+            </div>
+
+            <!-- Neural networks -->
+            <div class="section-header">Neural Networks</div>
+            <div class="qa-item">
+                <div class="question">
+                    <span>Is this a question?</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="answer">
+                    <p>This is the answer.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script>
+        // JavaScript for toggle functionality
+        document.querySelectorAll('.question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('.icon');
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null; // Collapse
+                    icon.textContent = '▼'; // Wedge pointing down
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px"; // Expand
+                    icon.textContent = '▲'; // Wedge pointing up
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

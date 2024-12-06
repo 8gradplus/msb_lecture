@@ -1,414 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MSB Lecture</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f7f7f7;
-        color: #333;
-        line-height: 1.6;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSB Lecture</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      background-color: #f7f7f7;
+      color: #ff5a5f;
+      padding: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 60px;
+      border-bottom: 1px solid #ff5a5f;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #ff5a5f;
+    }
+
+    h3 {
+      color: #555;
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      /* Added for wrapping on smaller screens */
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 30%;
+      min-width: 280px;
+      /* Ensures content fits on small screens */
+      margin-bottom: 0;
+      /* Adds space between rows on small screens */
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ff5a5f;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .logo {
+      height: 80px;
+      margin-left: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #ff5a5f;
+      color: white;
+    }
+
+    /* Responsive design for mobile */
+    @media (max-width: 768px) {
       header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        background-color: #f7f7f7;
-        color: #ff5a5f;
-        padding: 20px;
-        padding-bottom: 10px;
-        margin-bottom: 60px;
-        border-bottom: 1px solid #ff5a5f;
+        flex-direction: column;
+        align-items: center;
       }
 
       h1 {
-        margin: 0;
-        font-size: 1.5rem;
-        color: #ff5a5f;
-      }
-
-      h3 {
-        color: #555;
-        margin-top: 20px;
-        font-size: 1.5rem;
-      }
-
-      .container {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        gap: 20px;
-        padding: 20px;
-        flex-wrap: wrap;
-        /* Added for wrapping on smaller screens */
-      }
-
-      .content {
-        flex: 1;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 30%;
-        min-width: 280px;
-        /* Ensures content fits on small screens */
-        margin-bottom: 0;
-        /* Adds space between rows on small screens */
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      li {
-        margin: 10px 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: #ff5a5f;
-        font-weight: bold;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      footer {
+        font-size: 1.2rem;
         text-align: center;
-        margin-top: 20px;
-        font-size: 0.9rem;
-        color: #777;
       }
 
       .logo {
-        height: 80px;
-        margin-left: auto;
+        height: 60px;
+        margin-top: 10px;
+      }
+
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .content {
+        max-width: 100%;
+        margin-bottom: 20px;
       }
 
       table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Further adjustments for very small screens */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.1rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
       }
 
       table,
       th,
       td {
-        border: 1px solid #ddd;
+        font-size: 0.8rem;
       }
+    }
+  </style>
+</head>
 
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-      }
+<body>
+  <header>
+    <h1>Data Management and Business Intelligence</h1>
+    <img src="./slides/assets/cover/msb_logo.svg" alt="MSB Logo" class="logo" />
+  </header>
 
-      th {
-        background-color: #ff5a5f;
-        color: white;
-      }
-
-      /* Responsive design for mobile */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        h1 {
-          font-size: 1.2rem;
-          text-align: center;
-        }
-
-        .logo {
-          height: 60px;
-          margin-top: 10px;
-        }
-
-        .container {
-          flex-direction: column;
-          padding: 10px;
-        }
-
-        .content {
-          max-width: 100%;
-          margin-bottom: 20px;
-        }
-
-        table {
-          font-size: 0.9rem;
-        }
-      }
-
-      /* Further adjustments for very small screens */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.1rem;
-        }
-
-        h3 {
-          font-size: 1.3rem;
-        }
-
-        table,
-        th,
-        td {
-          font-size: 0.8rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <h1>Data Management and Business Intelligence</h1>
-      <img
-        src="./slides/assets/cover/msb_logo.svg"
-        alt="MSB Logo"
-        class="logo"
-      />
-    </header>
-
-    <div class="container">
-      <div class="content">
-        <h3>Location</h3>
-        <ul>
-          <li>9 AM - 5.45 PM CET</li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>1st Semester</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Event</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2024-11-14</td>
-              <td>
-                Lecture 1: Business Intelligence <br />
-                Lecture 2: Python Basics <br />
-                Python Lab
-              </td>
-            </tr>
-            <tr>
-              <td>2024-11-16</td>
-              <td>
-                Python Lab <br />
-                Lecture 3: Data Base Architecture
-              </td>
-            </tr>
-            <tr>
-              <td>2024-12-12</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2024-12-14</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="content">
-        <h3>3rd Semester</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Event</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2024-11-15</td>
-              <td>
-                Lecture 1: Business Intelligence <br />
-                Lecture 2: Python Basics <br />
-                Python Lab
-              </td>
-            </tr>
-            <tr>
-              <td>2024-11-18</td>
-              <td>
-                Python Lab <br />
-                Lecture 3: Data Base Architecture
-              </td>
-            </tr>
-            <tr>
-              <td>2024-12-13</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2024-12-16</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="container">
+    <div class="content">
+      <h3>Location</h3>
+      <ul>
+        <li>9 AM - 5.45 PM CET</li>
+      </ul>
+      <h3>Exam</h3>
+      <ul>
+        <li>The exam will be in written from and multiple choice questions.</li>
+        <li>There will be <strong>no coding quesions</strong>.</li>
+        <li>For your preparation, we will provide a Question + Answer page soon. </li>
+      </ul>
     </div>
-
-    <div class="container">
-      <div class="content">
-        <h3>Lecture Slides</h3>
-        <ul>
-          <li>
-            <a
-              href="https://8gradplus.github.io/msb_lecture/slides/business_intelligence/index.html"
-            >
-              Business Intelligence
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://8gradplus.github.io/msb_lecture/slides/python/index.html"
-            >
-              Python Basics
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://8gradplus.github.io/msb_lecture/slides/database_architectures/index.html"
-            >
-              Database Architecture I
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>Exercises</h3>
-        <ul>
-          <li>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_basics_pandas.ipynb"
-            >
-              Python and Pandas Basics
-            </a>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_basics_pandas_solution.ipynb"
-            >
-              (Solution)
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_pandas_visualization.ipynb"
-            >
-              Data Aggregation and Visualization
-            </a>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_pandas_visualization_solution.ipynb"
-            >
-              (Solution)
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/database_architecture.ipynb"
-            >
-              Database Architecture I
-            </a>
-            <a
-              href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/database_architecture_solution.ipynb"
-            >
-              (Solution)
-            </a>
-          </li>
-        </ul>
-        <h4>Additional Exercises to improve Python/Pandas Skills</h4>
-        <h5>
-        <ul>
-          <li>
-            <a href="https://www.academis.eu/pandas_go_to_space/"
-              >Pandas Tutorial by Kristian Rother</a
-            >
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/python/default.asp"
-              >w3schools python tutorial</a
-            >
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/python/pandas/default.asp"
-              >w3schools pandas tutorial</a
-            >
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/python/matplotlib_intro.asp"
-              >w3schools matplotlib tutorial</a
-            >
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/datascience/default.asp"
-              >w3schools datascience basics with pandas, matplotlib and scipy</a
-            >
-          </li>
-        </ul>
-      </h5>
-      <h4>Some youtube movies for relaxation and a better understanding of pythons and pandas</h4>
-        <h5>
-        <ul>
-          <li>
-            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&ab_channel=freeCodeCamp.org"
-              >Learn Python - Full Course for Beginners [freeCodeCamp.org]</a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc&ab_channel=ProgrammingwithMosh"
-              >Python Full Course for Beginners [Mosh]</a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/playlist?list=PLUaB-1hjhk8GZOuylZqLz-Qt9RIdZZMBE"
-              >Playlist Pandas for Beginners [Alex the Analyst]</a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=2uvysYbKdjM&t=71s&ab_channel=KeithGalli"
-              >Python Pandas Data Science Tutorial [Keith Galli]</a
-            >
-          </li>
-        </ul>
-      </h5>
-      </div>
-      <div class="content">
-        <h3>Exam</h3>
-      </div>
+    <div class="content">
+      <h3>1st Semester</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-11-14</td>
+            <td>
+              Business Intelligence <br />
+              Python Basics <br />
+              Python Lab
+            </td>
+          </tr>
+          <tr>
+            <td>2024-11-16</td>
+            <td>
+              Python Lab <br />
+              Data Base Architecture
+            </td>
+          </tr>
+          <tr>
+            <td>2024-12-12</td>
+            <td>Data Architecture and Infrastructure</td>
+          </tr>
+          <tr>
+            <td>2024-12-14</td>
+            <td>Neural Networks</td>
+          </tr>
+          <tr>
+            <td>2025-02-17</td>
+            <td>Exam</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-      <div style="margin-left: 30px">
-        <h3>References</h3>
-        <ul>
-          <li><a href="https://colab.research.google.com/">Google Colab</a></li>
-          <li>
-            <a href="https://pandas.pydata.org/docs/reference/index.html"
-              >Official Pandas Documentation</a
-            >
-          </li>
-          <li>
-            <a href="https://matplotlib.org/stable/gallery/index.html"
-              >Official Matplotlib Examples (search and adapt!)</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://blog.fabrichq.ai/what-is-operational-business-intelligence-heres-everything-you-need-to-know-7a51112ceb18"
-              >Operational BI</a
-            >
-          </li>
-        </ul>
-      </div>
+    <div class="content">
+      <h3>3rd Semester</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-11-15</td>
+            <td>
+              Business Intelligence <br />
+              Python Basics <br />
+              Python Lab
+            </td>
+          </tr>
+          <tr>
+            <td>2024-11-18</td>
+            <td>
+              Python Lab <br />
+              Data Base Architecture
+            </td>
+          </tr>
+          <tr>
+            <td>2024-12-13</td>
+            <td>Data Architecture and Infrastructure</td>
+          </tr>
+          <tr>
+            <td>2024-12-16</td>
+            <td>Neural Networks</td>
+          </tr>
+          <tr>
+            <td>2025-02-17</td>
+            <td>Exam</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-    <footer>2024</footer>
-  </body>
+
+  <div class="container">
+    <div class="content">
+      <h3>Lecture Slides</h3>
+      <ul>
+        <li>
+          <a href="https://8gradplus.github.io/msb_lecture/slides/business_intelligence/index.html">
+            Business Intelligence
+          </a>
+        </li>
+        <li>
+          <a href="https://8gradplus.github.io/msb_lecture/slides/python/index.html">
+            Python Basics
+          </a>
+        </li>
+        <li>
+          <a href="https://8gradplus.github.io/msb_lecture/slides/database_architectures/index.html">
+            Database Architecture I
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h3>Python Labs</h3>
+      <ul>
+        <li>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_basics_pandas.ipynb">
+            Python and Pandas Basics
+          </a>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_basics_pandas_solution.ipynb">
+            (Solution)
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_pandas_visualization.ipynb">
+            Data Aggregation and Visualization
+          </a>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/python_pandas_visualization_solution.ipynb">
+            (Solution)
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/database_architecture.ipynb">
+            Database Architecture I
+          </a>
+          <a
+            href="https://colab.research.google.com/github/8gradplus/msb_lecture/blob/main/colab/database_architecture_solution.ipynb">
+            (Solution)
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h3>Additional Python learning material</h3>
+      <h4>Additional Exercises to improve Python/Pandas Skills</h4>
+        <ul>
+          <li>
+            <a href="https://www.academis.eu/pandas_go_to_space/">Pandas Tutorial by Kristian Rother</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/python/default.asp">w3schools python tutorial</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/python/pandas/default.asp">w3schools pandas tutorial</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/python/matplotlib_intro.asp">w3schools matplotlib tutorial</a>
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/datascience/default.asp">w3schools datascience basics with pandas,
+              matplotlib and scipy</a>
+          </li>
+        </ul>
+      <h4>Some youtube movies for relaxation and a better understanding of pythons and pandas</h4>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&ab_channel=freeCodeCamp.org">Learn Python - Full Course
+              for Beginners [freeCodeCamp.org]</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc&ab_channel=ProgrammingwithMosh">Python Full Course for
+              Beginners [Mosh]</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/playlist?list=PLUaB-1hjhk8GZOuylZqLz-Qt9RIdZZMBE">Playlist Pandas for
+              Beginners [Alex the Analyst]</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=2uvysYbKdjM&t=71s&ab_channel=KeithGalli">Python Pandas Data Science
+              Tutorial [Keith Galli]</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div style="margin-left: 30px">
+    <h3>References</h3>
+    <ul>
+      <li>
+        <a
+          href="https://blog.fabrichq.ai/what-is-operational-business-intelligence-heres-everything-you-need-to-know-7a51112ceb18">Operational
+          BI</a>
+      </li>
+      <li><a href="https://colab.research.google.com/">Google Colab</a></li>
+      <li>
+        <a href="https://pandas.pydata.org/docs/reference/index.html">Official Pandas Documentation</a>
+      </li>
+      <li>
+        <a href="https://matplotlib.org/stable/gallery/index.html">Official Matplotlib Examples (search and adapt!)</a>
+      </li>
+ 
+    </ul>
+  </div>
+  </div>
+  <footer>2024</footer>
+</body>
+
 </html>

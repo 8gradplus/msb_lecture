@@ -42,6 +42,8 @@ Streamlined access to data ensures it is readily available precisely when needed
 
 Optimized storage solutions minimize expenses associated with hardware, cloud infrastructure, and software licenses. They also provide businesses with the flexibility to scale their systems up or down based on demand, ensuring cost-effectiveness and adaptability within a manageable budget.
 
+TODO: More details -> Data Transfer, Data Storage, Data Transformations (Computation time), Infrastructure costs, Maintenance costs (Employees)
+
 ---
 
 <span style="color: orange;">Data Warehouse</span>

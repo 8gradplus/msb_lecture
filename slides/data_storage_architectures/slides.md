@@ -18,7 +18,7 @@ Where are we located during the lecture?
 - Data storage architectures and lots of new terms
 - Deep-dive into lyvy's lakehouse architecture
 - Deep-dive into a realtime architecture
-- It's your turn, let's design and discuss different use-cases, maybe from your company?
+- Viktor CASE
 
 ---
 

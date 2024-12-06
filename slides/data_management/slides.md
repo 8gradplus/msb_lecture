@@ -1,7 +1,7 @@
 Where are we located during the lecture?
 
 <img
-  src="../assets/data_storage_architectures/imgs/imgs.001.png"
+  src="../assets/data_management/imgs/imgs.001.png"
   alt="Overview"
   style="
     width: 800px;
@@ -49,7 +49,7 @@ Optimized storage solutions minimize expenses associated with hardware, cloud in
 --
 
 <img
-  src="../assets/data_storage_architectures/imgs/imgs.002.png"
+  src="../assets/data_management/imgs/imgs.002.png"
   alt="Data Warehouse"
   style="
     width: 1600px;

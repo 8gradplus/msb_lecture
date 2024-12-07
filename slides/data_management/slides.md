@@ -162,9 +162,7 @@ Short excursion: Horizontal vs. Vertical scaling.
 
 --
 
-<span style="color: lightgreen;">Estimate the complexity at</span>
-
-- requirement for ???
+Pros & Cons
 
 ---
 
@@ -184,10 +182,6 @@ Short excursion: Horizontal vs. Vertical scaling.
 
 --
 
-<span style="color: lightgreen;">Estimate the complexity at</span>
-
-- requirement for ???
-
 ---
 
 <span style="color: orange;">Hybrid Data Lake</span>
@@ -206,10 +200,6 @@ Short excursion: Horizontal vs. Vertical scaling.
 
 --
 
-<span style="color: lightgreen;">Estimate the complexity at</span>
-
-- requirement for ???
-
 ---
 
 <span style="color: orange;">Data Lakehouse</span>
@@ -227,10 +217,6 @@ Short excursion: Horizontal vs. Vertical scaling.
 />
 
 --
-
-<span style="color: lightgreen;">Estimate the complexity at</span>
-
-- requirement for ???
 
 ---
 

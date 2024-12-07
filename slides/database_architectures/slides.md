@@ -582,7 +582,11 @@ That's also what we call a data model!
 
 ---
 
-<h3><span style="color: orange;">Different types of databases</span></h>
+So far we discussed one of the most used database types: relational databases
+
+---
+
+<h3><span style="color: orange;">Different types of databases for different types of data</span></h>
 
 ---
 
@@ -592,6 +596,7 @@ That's also what we call a data model!
 - relational databases are a structured approach to data storage, using tables to organize and link data
 - typically implements transactions (ACID)
 - based on the relational model
+- e.g. Postgres, MySQL, Microsoft SQL Server
 
 --
 
@@ -654,7 +659,8 @@ That's also what we call a data model!
 <span style="color: orange;">Document Databases</span>
 
 - one of the main representative of NoSQL databases
-- instead of using table like structures, we are using **documents**
+- instead of using table like structures, it uses **documents**
+- e.g. MongoDB, Couchbase, ArangoDB
 
 --
 
@@ -762,15 +768,39 @@ Use Case: Rapid development environments like agile projects or startups.
 
 ---
 
-#### Others
+<span style="color: orange;">Blob Storage Databases / Object Storages</span>
 
-- Graph Databases
-- Key-Value Stores
-- Column-Family Databases
-- Time-Series Databases
-- Object Databases
-- Multimodel Databases
-- NewSQL Databases
+- optimized to store any kind of data (e.g. binary data) as objects (similar to files)
+- adds metadata to stored objects
+- e.g. minio, AWS S3, Azure Blob Storage, Digital Ocean Spaces
+
+--
+
+<span style="color: yellow;">Demo: Minio</span>
+
+---
+
+<span style="color: orange">Excursion: Data Types</span>
+
+<span style="color: lightgreen">Please find out</span> the difference between
+
+- unstructured data
+- semi-structured data
+- structured data
+
+and <span style="color: lightgreen">map it to the discussed database types.</span>
+
+---
+
+#### Other Databases
+
+- Graph Databases (e.g. ArangoDB)
+- Key-Value Stores (e.g. Redis)
+- Column-Family Databases (e.g. Apache Cassandra)
+- Time-Series Databases (e.g. InfluxDB)
+- Search Optimized Databases (e.g. Elasticsearch)
+- Multimodel Databases (e.g. ArangoDB: Graph, document & Key-Value)
+- NewSQL Databases (e.g. CockroachDB)
 
 ---
 
@@ -791,9 +821,9 @@ The [Stackoverflow Survey](https://survey.stackoverflow.co/2023/#most-popular-te
 
 The choice depends on <span style="color: orange;">usecases</span>:
 
+- What type of data do I have?
 - Do I have a fixed schema?
 - Do I have nested structures?
 - Is my data dense?
 - Do I need strong ACID criterias?
-- **What about images and other binary / unstructured data?**
 - ...

@@ -81,7 +81,9 @@ Where are we located during the lecture?
 
 --
 
-Short excursion: Horizontal vs. Vertical scaling.
+Short excursion:
+
+<span style="color: lightgreen">horizontal vs. vertical scaling, whats the difference?</span>
 
 --
 
@@ -163,6 +165,14 @@ Short excursion: Horizontal vs. Vertical scaling.
 --
 
 Pros & Cons
+
+--
+
+Suitability
+
+--
+
+Case calculate costs for example
 
 ---
 

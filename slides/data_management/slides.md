@@ -172,6 +172,10 @@ Suitability
 
 --
 
+Daily costs calculation with constructed example
+
+Costs if schema change & Consequences
+
 Case calculate costs for example
 
 ---

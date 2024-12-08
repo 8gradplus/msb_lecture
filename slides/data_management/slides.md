@@ -164,19 +164,41 @@ Short excursion:
 
 --
 
-Pros & Cons
+<span style="color: orange;">Description</span>
+
+- <span style='font-size: 0.7em;'>A Data Warehouse serves as a central hub for storing structured data.</span>
+- <span style='font-size: 0.7em;'>Information is collected from multiple sources, processed / ingested (ETL), and then stored in the Warehouse.</span>
+- <span style='font-size: 0.7em;'>The design of a Data Warehouse resembles a well-structured library, enabling easy data retrieval and analysis.</span>
+- <span style='font-size: 0.7em;'>This organization allows businesses to gain insights quickly, enhancing operational efficiency and decision-making.</span>
+- <span style='font-size: 0.7em;'>Additionally, its structured data foundation supports robust Business Intelligence (BI) analysis.</span>
 
 --
 
-Suitability
+<span style="color: orange;">Pros</span>
+
+- <span style='font-size: 0.7em;'>Transparent ETL processes helps to understand how data is created (e.g. using _dbt_)</span>
+- <span style='font-size: 0.7em;'>Higher security: structured data organization in data marts</span>
+- <span style='font-size: 0.7em;'>Very fast query processing</span>
+  - <span style='font-size: 0.7em;'>as only relevant data is saved as data marts the amount of data remains within limits</span>
+  - <span style='font-size: 0.7em;'>typically relational databases are used, which are extremely performant within a certain data size limit</span>
 
 --
 
-Daily costs calculation with constructed example
+<span style="color: orange;">Cons</span>
 
-Costs if schema change & Consequences
+- <span style='font-size: 0.7em;'>as intermediate data tables (like staging tables) are typically not persisted, troubleshooting can be difficult (virtual tables / views vs. physical tables / materialized)</span>
+- <span style='font-size: 0.7em;'>changes in schema can be very expensive (reload external data sources)</span>
+- <span style='font-size: 0.7em;'>loss of data can occur if data on external data sources has a short retention period</span>
+- <span style='font-size: 0.7em;'>explorative data tasks based on raw- and intermediate data (staging) not possible</span>
+- <span style='font-size: 0.7em;'>not suitable for machine learning tasks on unstructured data</span>
 
-Case calculate costs for example
+--
+
+Short Excursion: <span style="color: lightgreen;">What is a view? What is a materialized view in a postgres database?</span>
+
+--
+
+<span style='color: lightgreen'>What can be high cost drivers in a pure data warehouse architecture?</span>
 
 ---
 

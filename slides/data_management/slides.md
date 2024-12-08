@@ -1,3 +1,35 @@
+<style>
+.small-list {
+    font-size: 0.7em;
+    list-style: none; /* Remove default list styling */
+    counter-reset: section; /* Initialize counter */
+}
+
+.small-list li {
+    counter-increment: section; /* Increment counter */
+    margin-bottom: 0.5em; /* Add spacing between items */
+}
+
+.smaller-list {
+    font-size: 0.6em;
+    list-style: none; /* Remove default list styling */
+    counter-reset: section; /* Initialize counter */
+}
+
+.smaller-list li {
+    counter-increment: section; /* Increment counter */
+    margin-bottom: 0.5em; /* Add spacing between items */
+}
+
+.small-text {
+    font-size: 0.7em;
+}
+
+.smaller-text {
+    font-size: 0.6em;
+}
+</style>
+
 Where are we located during the lecture?
 
 <img
@@ -16,9 +48,10 @@ Where are we located during the lecture?
 
 - The focus / goals of data management
 - Data management architectures
-- Deep-dive into lyvy's lakehouse architecture
+- Deep-dive into lyvy's architecture
 - Deep-dive into a realtime architecture
-- Viktor CASE
+- Cloud vs. On-Premise
+- Exercise: Design and Critique a Data Management Architecture yourself
 
 ---
 
@@ -166,35 +199,43 @@ Short excursion:
 
 <span style="color: orange;">Description</span>
 
-- <span style='font-size: 0.7em;'>A Data Warehouse serves as a central hub for storing structured data.</span>
-- <span style='font-size: 0.7em;'>Information is collected from multiple sources, processed / ingested (ETL), and then stored in the Warehouse.</span>
-- <span style='font-size: 0.7em;'>The design of a Data Warehouse resembles a well-structured library, enabling easy data retrieval and analysis.</span>
-- <span style='font-size: 0.7em;'>This organization allows businesses to gain insights quickly, enhancing operational efficiency and decision-making.</span>
-- <span style='font-size: 0.7em;'>Additionally, its structured data foundation supports robust Business Intelligence (BI) analysis.</span>
+<ol class="small-list">
+<li>A Data Warehouse serves as a central hub for storing structured data.</li>
+<li>Information is collected from multiple sources, processed / ingested (ETL), and then stored in the Warehouse.</li>
+<li>The design of a Data Warehouse resembles a well-structured library, enabling easy data retrieval and analysis.</li>
+<li>This organization allows businesses to gain insights quickly, enhancing operational efficiency and decision-making.</li>
+<li>Additionally, its structured data foundation supports robust Business Intelligence (BI) analysis.</li>
+</ol>
 
 --
 
-<span style="color: orange;">Pros</span>
+<span style="color: orange;">Some Pros</span>
 
-- <span style='font-size: 0.7em;'>Transparent ETL processes helps to understand how data is created (e.g. using _dbt_)</span>
-- <span style='font-size: 0.7em;'>Higher security: structured data organization in data marts</span>
-- <span style='font-size: 0.7em;'>Very fast query processing</span>
-  - <span style='font-size: 0.7em;'>as only relevant data is saved as data marts the amount of data remains within limits</span>
-  - <span style='font-size: 0.7em;'>typically relational databases are used, which are extremely performant within a certain data size limit</span>
-
---
-
-<span style="color: orange;">Cons</span>
-
-- <span style='font-size: 0.7em;'>as intermediate data tables (like staging tables) are typically not persisted, troubleshooting can be difficult (virtual tables / views vs. physical tables / materialized)</span>
-- <span style='font-size: 0.7em;'>changes in schema can be very expensive (reload external data sources)</span>
-- <span style='font-size: 0.7em;'>loss of data can occur if data on external data sources has a short retention period</span>
-- <span style='font-size: 0.7em;'>explorative data tasks based on raw- and intermediate data (staging) not possible</span>
-- <span style='font-size: 0.7em;'>not suitable for machine learning tasks on unstructured data</span>
+<ol class="small-list">
+<li>Transparent ETL processes helps to understand how data is created (e.g. using _dbt_)</li>
+<li>Higher security: structured data organization in data marts</li>
+<li>Very fast query processing</li>
+<ul>
+  <li>as only relevant data is saved as data marts the amount of data remains within limits</li>
+  <li>typically relational databases are used, which are extremely performant within a certain data size limit</li>
+</ul>
+</ol>
 
 --
 
-Short Excursion: <span style="color: lightgreen;">What is a view? What is a materialized view in a postgres database?</span>
+<span style="color: orange;">Some Cons</span>
+
+<ol class="small-list">
+<li>as intermediate data tables (like staging tables) are typically not persisted, troubleshooting can be difficult (virtual tables / views vs. physical tables / materialized)</li>
+<li>changes in schema can be very expensive (reload external data sources)</li>
+<li>loss of data can occur if data on external data sources has a short retention period</li>
+<li>explorative data tasks based on raw- and intermediate data (staging) not possible</li>
+<li>not suitable for machine learning tasks on unstructured data</li>
+</ol>
+
+--
+
+Short Excursion: <span style="color: lightgreen;">What is a view? What is a materialized view in a relational database like PostgreSQL?</span>
 
 --
 
@@ -256,18 +297,74 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 
 ---
 
-Don't think of these architectures as being set in stone. They all have advantages and disadvantages
-and are applied in modified forms.
+<span style='color:red'>Don't think of these architectures as being set in stone. They all have advantages and disadvantages and are applied in modified and combined forms.</span>
 
 ---
 
-<span style="color: orange;">Deep-dive into lyvy's lakehouse architecture</span>
+<span style="color: orange;">Deep-dive into lyvy's architecture</span>
 
 ---
 
-#### Story
+<span style="color: orange;">Deep-dive into a realtime architecture</span>
 
-- https://sigma.software/about/media/how-to-choose-the-best-type-of-data-storage-architecture
+---
+
+<span style="color: orange;">Exercise</span>: Design and Critique a Data Management Architecture yourself
+
+--
+
+<span style="color: orange;">Scenario</span>
+
+<ol class="small-text">
+You are a consultant tasked with designing a data management architecture for an upcoming start-up, called DebtRay, handling sensitive and expensive raw data from multiple providers (e.g. Bloomberg, London Stock Exchange). The architecture must address several challenges, including cost, scalability, and flexibility.
+</ol>
+
+<ol class="small-text">DebtRay's business model is</ol>
+
+--
+
+<span style="color: orange;">Procedure</span>
+
+<ol class="smaller-list">
+<li>Design Phase
+    <ul>
+        <li>Based on the provided key points, draft a data management architecture that balances costs, risks, and scalability.</li>
+        <li>Describe each component of your architecture and justify your decisions.</li>
+    </ul>
+</li>
+<li>Comparison Phase
+    <ul>
+        <li>Compare your architecture to the provided actual architecture.</li>
+        <li>Identify strengths and weaknesses of both approaches.</li>
+    </ul>
+</li>
+<li>Critique Phase
+    <ul>
+        <li>Suggest improvements for the actual architecture and for your own design.</li>
+        <li>Focus on aspects like scalability, cost efficiency, and handling schema changes.</li>
+    </ul>
+</li>
+</ol>
+
+--
+
+<span style="color: orange;">Key Points</span>
+
+- this and that
+
+--
+
+<span style="color: lightgreen;">Design and Critique a Data Management Architecture</span>
+
+Checklist
+
+<ol class = "small-list">
+<li>How does your architecture address the economic risk associated with raw data?</li>
+<li>Does your design support future scalability and modularity?</li>
+<li>How do you handle schema changes in raw data?</li>
+<li>Compare the costs of your architecture with the current one (e.g. storage, compute, backup).</li>
+<li>What trade-offs did you make in your design, and why?</li>
+</ol>
 
 ---
 

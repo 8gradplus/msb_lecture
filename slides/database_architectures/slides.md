@@ -623,7 +623,7 @@ So far we discussed one of the most used database types: relational databases
 
 - Data stored in tables; tables linked via keys.
 - Relational databases use <span style="color: orange;">SQL (Structured Query Language)</span> to manage data.
-- SQL supports CRUD operations (Create, Read, Update, Delete).
+- rDBs supports CRUD operations (Create, Read, Update, Delete).
 - Benefits of structure: reduces redundancy and supports complex data retrieval.
 
 --

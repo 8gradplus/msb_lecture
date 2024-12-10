@@ -153,17 +153,6 @@ Short excursion:
 
 --
 
-<span style="color: orange;">**Usability and Data Democratization**</span>
-
-- <span style="color: orange;font-size: 0.9em;">Goal</span>: <span style="font-size: 0.8em;">Enable non-technical users to access and understand data.</span>
-- <span style="color: orange;font-size: 0.9em;">Why It Matters</span>: <span style="font-size: 0.8em;">Promotes data-driven decision-making across all levels of an organization.</span>
-- <span style="color: orange;font-size: 0.9em;">Key Activities</span>:
-  - <span style="font-size: 0.8em;">Providing self-service BI tools.</span>
-  - <span style="font-size: 0.8em;">Creating user-friendly dashboards and visualizations.</span>
-  - <span style="font-size: 0.8em;">Offering training on data literacy.</span>
-
---
-
 <span style="color: orange;">Cost Efficiency</span>
 
 - <span style="color: orange;font-size: 0.9em;">Goal</span>: <span style="font-size: 0.8em;">Minimize expenses related to storing, processing, and managing data while maintaining performance and scalability.</span>
@@ -209,10 +198,14 @@ Short excursion:
 
 --
 
+<span style='color: lightgreen'>What can be high cost drivers in a pure data warehouse architecture?</span>
+
+--
+
 <span style="color: orange;">Some Pros</span>
 
 <ol class="small-list">
-<li>Transparent ETL processes helps to understand how data is created (e.g. using _dbt_)</li>
+<li>Transparent ETL processes helps to understand how data is created (e.g. using <em>dbt</em>)</li>
 <li>Higher security: structured data organization in data marts</li>
 <li>Very fast query processing</li>
 <ul>
@@ -223,11 +216,20 @@ Short excursion:
 
 --
 
+Short Excursion: What are relevant topics within the <span style="color: orange;">ETL</span> process?
+
+- schema documentation
+- traceability of the data marts created (dependency graphs)
+- configurable fault tolerance with monitoring
+- testing with logging
+
+--
+
 <span style="color: orange;">Some Cons</span>
 
 <ol class="small-list">
 <li>as intermediate data tables (like staging tables) are typically not persisted, troubleshooting can be difficult (virtual tables / views vs. physical tables / materialized)</li>
-<li>changes in schema can be very expensive (reload external data sources)</li>
+<li>changes in schema of data marts can be very expensive (reload external data sources)</li>
 <li>loss of data can occur if data on external data sources has a short retention period</li>
 <li>explorative data tasks based on raw- and intermediate data (staging) not possible</li>
 <li>not suitable for machine learning tasks on unstructured data</li>
@@ -237,10 +239,6 @@ Short excursion:
 
 Short Excursion: <span style="color: lightgreen;">What is a view? What is a materialized view in a relational database like PostgreSQL?</span>
 
---
-
-<span style='color: lightgreen'>What can be high cost drivers in a pure data warehouse architecture?</span>
-
 ---
 
 <span style="color: orange;">Data Lake</span>
@@ -249,7 +247,7 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 
 <img
   src="../assets/data_management/imgs/imgs.003.png"
-  alt="Data Warehouse"
+  alt="Data Lake"
   style="
     width: 1600px;
     margin: 0 auto 4rem auto;
@@ -258,6 +256,38 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 />
 
 --
+
+<span style="color: orange;">Description</span>
+
+<ol class="small-list">
+<li>A Data Lake serves as a central hub for storing all kinds of data</li>
+<li>Information is extracted and directly loaded into the storage, <b>without transformations.</b></li>
+<li>The design of a Data Lake resembles a copy of the original data sources, enabling data exploration, data science and machine learning tasks.</li>
+<li>This organization allows businesses to persist data sources and making them long-term available.</li>
+</ol>
+
+--
+
+<span style = "color: lightgreen">Please provide a short list of pros and cons for the Data Lake.</span>
+
+--
+
+<span style="color: orange;">Some Pros</span>
+
+<!-- - high flexibility, agility and no limits regarding
+  - data format structure
+  - type of data
+  - amount of data
+- typically low costs on storage size (roughly ranges from $0.01 to $0.025 / GB / month) -->
+
+--
+
+<span style="color: orange;">Some Cons</span>
+
+<!-- - higher costs on processing the data (no free lunch)
+- lack of structure, therefore lack of transparency: risk of becoming a data swamp
+- security challenges: might be challenging to identify security threats because of vast amount of data in vast amount of formats
+- no default query execution: another tooling is necessary -->
 
 ---
 
@@ -267,7 +297,7 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 
 <img
   src="../assets/data_management/imgs/imgs.004.png"
-  alt="Data Warehouse"
+  alt="Hybrid Data Lake"
   style="
     width: 1600px;
     margin: 0 auto 4rem auto;
@@ -276,6 +306,19 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 />
 
 --
+
+<span style="color: orange;">Description</span>
+
+<ol class="small-list">
+<li>A Hybrid Data Lake combines the advantages of Data Warehouses and Data Lakes</li>
+<li>to the expense of complexity.</li>
+</ol>
+
+--
+
+Regarding costs, in a Hybrid Data Lake setting, the amount of storage is increased.
+
+<span style = "color: lightgreen">When is it still advisable?</span>
 
 ---
 
@@ -285,7 +328,7 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 
 <img
   src="../assets/data_management/imgs/imgs.005.png"
-  alt="Data Warehouse"
+  alt="Lakehouse"
   style="
     width: 1600px;
     margin: 0 auto 4rem auto;
@@ -294,6 +337,23 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 />
 
 --
+
+<span style="color: orange;">Description</span>
+
+<ol class="small-list">
+<li>A Lakehouse combines the advantages of Data Warehouses and Data Lakes</li>
+<li>and still keeps complexity low.</li>
+<li>Often standalone query engine is necessary.</li>
+</ol>
+
+<span style = "color: lightgreen">So what is a potential disadvantage of this structure? (Remember there is no free lunch!)</span>
+
+--
+
+<span style="color: orange;">Hybrid Data Lake or Lakehouse?</span>
+
+<!-- - Hybrid Data Lake can provide high performance (low latency for e.g. operational BI) data with cheap data query costs
+- Lakehouse lower complexity, less expenses regarding maintenance and still good performance, sufficient for most cases -->
 
 ---
 
@@ -307,6 +367,19 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 
 <span style="color: orange;">Deep-dive into a realtime architecture</span>
 
+--
+
+---
+
+<span style="color: orange;">On-Premises vs. Cloud</span>
+
+<span style="color: lightgreen;">
+Please study the following link and explain with your words the difference between On-Premises and Cloud.
+What different levels are there in the cloud sector and how do they differ?
+</span>
+
+[On-Premises vs. Cloud](https://www.bmc.com/blogs/saas-vs-paas-vs-iaas-whats-the-difference-and-how-to-choose/)
+
 ---
 
 <span style="color: orange;">Exercise</span>: Design and Critique a Data Management Architecture yourself
@@ -316,10 +389,10 @@ Short Excursion: <span style="color: lightgreen;">What is a view? What is a mate
 <span style="color: orange;">Scenario</span>
 
 <ol class="small-text">
-You are a consultant tasked with designing a data management architecture for an upcoming start-up, called DebtRay, handling sensitive and expensive raw data from multiple providers (e.g. Bloomberg, London Stock Exchange). The architecture must address several challenges, including cost, scalability, and flexibility.
+You are a consultant tasked with designing a data management architecture for an upcoming start-up, called DebtRay, handling expensive raw data from multiple providers (e.g. Bloomberg, London Stock Exchange). The architecture must address several challenges, including cost, scalability, and flexibility.
 </ol>
 
-<ol class="small-text">DebtRay's business model is</ol>
+<ol class="small-text">DebtRay's business model is the quantification and assessment of companies bond emissions.</ol>
 
 --
 
@@ -348,17 +421,50 @@ You are a consultant tasked with designing a data management architecture for an
 
 --
 
-<span style="color: orange;">Key Points</span>
-
-- this and that
+<span style="color: orange;">Key Facts of the Business</span>
 
 --
 
-<span style="color: lightgreen;">Design and Critique a Data Management Architecture</span>
+<span style="color: orange;">General Business</span>
+
+- not certain that business idea works and scales
+- starting with just one person in the role as full stack data alchemist
+- first implementation time is limited and must proceed quickly
+- next to analytical services, the business provides machine learning models for predictions
+
+--
+
+<span style="color: orange;">Data</span>
+
+- high-priced external data as the basis for core business (Bloomberg / London Stock Exchange)
+- data volumes manageable in the range under 1 GB
+- live data desirable but not absolutely necessary, at least one update per month
+
+--
+
+<span style="color: orange;">Data Aggregation</span>
+
+- Processes: De-duplication, combining raw data, imputing, interpolating, sanity checks, and replay capabilities.
+- Challenges: Complex workflows due to messy raw data and evolving requirements.
+- Compatibility: Must handle schema evolution in raw data.
+
+--
+
+<span style="color: orange;">Reporting / Monitoring</span>
+
+- CFO should get information about costs
+- CEO should get information about customers and corresponding KPIs
+- CTO should get information about the state of the data infrastructure (Everything up and running? Did we face errors somewhere?)
+
+--
+
+<span style="color: lightgreen;">Design a Data Management Architecture</span>
 
 Checklist
 
 <ol class = "small-list">
+<li>Provide schematic flowchart of your designed architecture.</li>
+<li>Add names of tools for the different steps. (google for it, make proposals)</li>
 <li>How does your architecture address the economic risk associated with raw data?</li>
 <li>Does your design support future scalability and modularity?</li>
 <li>How do you handle schema changes in raw data?</li>
@@ -366,9 +472,27 @@ Checklist
 <li>What trade-offs did you make in your design, and why?</li>
 </ol>
 
+--
+
+<span style="color: lightgreen;">Criticize Debtray's Architecture</span>
+
+<img
+  src="../assets/data_management/imgs/imgs.006.png"
+  alt="Debtray Architecture"
+  style="
+    width: 1600px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
+
 ---
 
 - Finops
 - Data Availability (Retention time)
 - live vs. prelive / staging vs. live
 - snowflake vs. clickhouse
+
+---
+
+[Main Reference](https://sigma.software/about/media/how-to-choose-the-best-type-of-data-storage-architecture)

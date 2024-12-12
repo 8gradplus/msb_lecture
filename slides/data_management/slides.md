@@ -236,8 +236,8 @@ Regarding costs, in a Hybrid Data Lake setting, the amount of storage is increas
 
 <span style="color: orange;">Hybrid Data Lake or Lakehouse?</span>
 
-<!-- - Hybrid Data Lake can provide high performance (low latency for e.g. operational BI) data with cheap data query costs
-- Lakehouse lower complexity, less expenses regarding maintenance and still good performance, sufficient for most cases -->
+- Hybrid Data Lake can provide high performance (low latency for e.g. operational BI) data with cheap data query costs
+- Lakehouse lower complexity, less expenses regarding maintenance and still good performance, sufficient for most cases
 
 ---
 

@@ -361,16 +361,6 @@ Regarding costs, in a Hybrid Data Lake setting, the amount of storage is increas
 
 ---
 
-<span style="color: orange;">Deep-dive into lyvy's architecture</span>
-
----
-
-<span style="color: orange;">Deep-dive into a realtime architecture</span>
-
---
-
----
-
 <span style="color: orange;">On-Premises vs. Cloud</span>
 
 <span style="color: lightgreen;">
@@ -379,6 +369,26 @@ What different levels are there in the cloud sector and how do they differ?
 </span>
 
 [On-Premises vs. Cloud](https://www.bmc.com/blogs/saas-vs-paas-vs-iaas-whats-the-difference-and-how-to-choose/)
+
+---
+
+<span style="color: orange;">Deep-dive into lyvy's architecture</span>
+
+--
+
+<img
+  src="../assets/data_management/imgs/imgs.007.png"
+  alt="Lakehouse"
+  style="
+    width: 1600px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
+
+---
+
+<span style="color: orange;">Deep-dive into a realtime architecture</span>
 
 ---
 

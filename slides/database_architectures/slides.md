@@ -806,6 +806,35 @@ FROM active_user_orders
 
 Although it's just a virtual table, there is no difference in e.g. the SELECT statement.
 
+-> see the equivalent SQL call on the next slide
+
+--
+
+```SQL
+SELECT
+  users.email,
+  orders.order_date
+FROM (
+  SELECT
+    users.user_id,
+    users.username,
+    users.email,
+    orders.order_id,
+    orders.order_date,
+    orders.total_amount
+  FROM
+      users
+  LEFT JOIN
+      orders ON users.user_id = orders.user_id
+  WHERE
+      users.is_active = TRUE;
+)
+```
+
+The view simplifies the access to the joined table and can be reused
+everywhere without storing the joined table physically and without
+duplicating the JOIN code everywhere.
+
 ---
 
 <span style="color: orange;">Document Databases</span>

@@ -229,6 +229,34 @@ Complexity (Binary Search)
 
 --
 
+Steps <span style="color: orange;">naive</span> vs. <span style="color: red;">binary search</span>:
+
+<img
+  src="../assets/database_architectures/imgs/imgs.015.png"
+  alt="Overview"
+  style="
+    width: 1280px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
+
+--
+
+Steps <span style="color: orange;">naive</span> vs. <span style="color: red;">binary search</span> on a log scale:
+
+<img
+  src="../assets/database_architectures/imgs/imgs.016.png"
+  alt="Overview"
+  style="
+    width: 1280px;
+    margin: 0 auto 4rem auto;
+    background: transparent;
+  "
+/>
+
+--
+
 Tada, that's what we call an index!
 
 --
@@ -512,8 +540,8 @@ The customer, order and product chain. Let's be a data engineer.
 
 | customer_id | first_name | last_name |
 | ----------- | ---------- | --------- |
-| 1           | Viktor     | Atalla    |
-| 2           | Christoph  | Baldow    |
+| 1           | Mary Jane  | Watson    |
+| 2           | Harry      | Osborn    |
 | 3           | Peter      | Parker    |
 | ...         | ...        | ...       |
 
@@ -523,8 +551,8 @@ The customer, order and product chain. Let's be a data engineer.
 
 | <span style="color: orange;">customer_id</span> | first_name | last_name |
 | ----------------------------------------------- | ---------- | --------- |
-| 1                                               | Viktor     | Atalla    |
-| 2                                               | Christoph  | Baldow    |
+| 1                                               | Mary Jane  | Watson    |
+| 2                                               | Harry      | Osborn    |
 | 3                                               | Peter      | Parker    |
 | ...                                             | ...        | ...       |
 
@@ -647,12 +675,136 @@ So far we discussed one of the most used database types: relational databases
 
 --
 
-**SQL**
+<span style="color: orange">SQL</span>
 
-- Core SQL Standard: defines features the rdb should support, e.g. SELECT, INSERT, UPDATE or DELETE
+- Core SQL Standard: defines features the rdb should support, e.g. CREATE, SELECT, INSERT, UPDATE or DELETE
 - ANSI/ISO has released multiple versions of SQL over the years: SQL-86, SQL-89, ..., SQL:2023
 - Additional Vendor Specific Extensions, e.g. Postgres, Mysql, ...
-- **However:** <span style="color: orange;">We concentrate on Pandas. Why? Because Pandas is powerful and more intuitive for beginners...and much k3wl3r!</span>
+
+--
+
+Example <span style="color: orange">CREATE</span> to create a table
+
+```SQL
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each user
+    username VARCHAR(50) NOT NULL,          -- User's c hosen username
+    email VARCHAR(100) UNIQUE NOT NULL,     -- User's email, must be unique
+    password_hash VARCHAR(255) NOT NULL,    -- Encrypted password
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp of creation
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Timestamp of last update
+    is_active BOOLEAN DEFAULT TRUE          -- Indicates if the user's account is active
+);
+```
+
+--
+
+Example <span style="color: orange">SELECT</span> to read data from data table
+
+```SQL
+SELECT user_id, username, email, created_at
+FROM users
+WHERE is_active = TRUE
+ORDER BY created_at DESC;
+```
+
+--
+
+Example <span style="color: orange">INSERT</span> to insert a new row into a table
+
+```SQL
+INSERT INTO users (username, email, password_hash, is_active)
+VALUES
+    ('janedoe', 'janedoe@example.com', 'hashed_password_1', TRUE),
+    ('jacksmith', 'jacksmith@example.com', 'hashed_password_2', FALSE);
+```
+
+--
+
+Example <span style="color: orange">UPDATE</span> to update a row in a table
+
+```SQL
+UPDATE users
+SET email = 'newemail@example.com', updated_at = CURRENT_TIMESTAMP
+WHERE user_id = 1;
+```
+
+--
+
+Example <span style="color: orange">DELETE</span> to delete rows in a table which end with _example.com_.
+
+```SQL
+DELETE FROM users
+WHERE user_id IN (
+    SELECT user_id
+    FROM users
+    WHERE email LIKE '%example.com'
+);
+```
+
+--
+
+Example <span style="color: orange">FOREIGN KEY</span> to reference an order table to the user table.
+
+```SQL
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+```
+
+-> ON DELETE/UPDATE CASCADE means, that if the user with a corresponding _user_id_ is deleted, the corresponding order is deleted as well
+
+--
+
+Example <span style="color: orange">JOIN</span> to join two tables.
+
+```SQL
+SELECT
+  users.user_id, users.username, users.email,
+  orders.order_id, orders.order_date, orders.total_amount
+FROM users
+INNER JOIN orders ON users.user_id = orders.user_id;
+```
+
+--
+
+Example <span style="color: orange">CREATE VIEW</span> to create a virtual table.
+
+```SQL
+CREATE VIEW active_user_orders AS
+SELECT
+    users.user_id,
+    users.username,
+    users.email,
+    orders.order_id,
+    orders.order_date,
+    orders.total_amount
+FROM
+    users
+LEFT JOIN
+    orders ON users.user_id = orders.user_id
+WHERE
+    users.is_active = TRUE;
+```
+
+Checkout what a [view](<https://en.wikipedia.org/wiki/View_(SQL)>) is.
+
+--
+
+Example <span style="color: orange">SELECT</span> applied on the _active_user_orders_ view.
+
+```SQL
+SELECT
+  users.email,
+  orders.order_date
+FROM active_user_orders
+```
+
+Although it's just a virtual table, there is no difference in e.g. the SELECT statement.
 
 ---
 

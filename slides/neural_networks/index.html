@@ -10,11 +10,40 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css" />
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css" />
   <link rel="stylesheet" href="../reveal.js/dist/theme/black.css" />
-  
+
   <!-- Latex -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script> -->
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <!-- Theme for syntax highlighting -->
   <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css" />
+
+  <style>
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .split-container {
+      display: flex;
+      justify-content: space-between;
+      /* Evenly distribute tables across the slide */
+      /* align-items: center; */
+      /* Align tables to the top */
+      width: 10%;
+      /* Full width of the slide */
+      box-sizing: border-box;
+    }
+
+    .stacked-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* Distribute tables vertically */
+      height: 100%;
+      /* Takes full height of container */
+    }
+  </style>
 </head>
 
 <body>
@@ -26,40 +55,746 @@
       </section>
 
       <section>
+        <h4>The problem</h4>
+        <div class="split-container" style="margin-left:-100px">
+          <table
+            style="font-size: 25px; width: 90%; border-collapse: collapse; margin-right:100px; text-align: center;">
+            <tr>
+              <th style="text-align: center;">Age</th>
+              <th style="text-align: center;">BodyMassIndex</th>
+              <th style="text-align: center;">BloodPreassure</th>
+              <th style="text-align: center;">Cholesterol</th>
+              <th style="text-align: center;">BloodSugar</th>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.038</td>
+              <td style="text-align: center;">0.062</td>
+              <td style="text-align: center;">0.022</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.018</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.002</td>
+              <td style="text-align: center;">-0.051</td>
+              <td style="text-align: center;">-0.026</td>
+              <td style="text-align: center;">-0.039</td>
+              <td style="text-align: center;">-0.092</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.085</td>
+              <td style="text-align: center;">0.044</td>
+              <td style="text-align: center;">-0.006</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.026</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.089</td>
+              <td style="text-align: center;">-0.012</td>
+              <td style="text-align: center;">-0.037</td>
+              <td style="text-align: center;">0.034</td>
+              <td style="text-align: center;">-0.009</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.005</td>
+              <td style="text-align: center;">-0.036</td>
+              <td style="text-align: center;">0.022</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.047</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.093</td>
+              <td style="text-align: center;">-0.041</td>
+              <td style="text-align: center;">-0.019</td>
+              <td style="text-align: center;">-0.076</td>
+              <td style="text-align: center;">-0.096</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.045</td>
+              <td style="text-align: center;">-0.047</td>
+              <td style="text-align: center;">-0.016</td>
+              <td style="text-align: center;">-0.039</td>
+              <td style="text-align: center;">-0.038</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.064</td>
+              <td style="text-align: center;">-0.002</td>
+              <td style="text-align: center;">0.067</td>
+              <td style="text-align: center;">0.018</td>
+              <td style="text-align: center;">0.003</td>
+            </tr>
+          </table>
+
+          <table style="font-size: 25px; width: 90%; border-collapse: collapse; text-align: center; color: yellow">
+            <tr>
+              <th style="text-align: center;">DiseaseProgression</th>
+            </tr>
+            <tr>
+              <td style="text-align: center;">151.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">75.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">141.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">206.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">135.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">97.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">138.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">63.0</td>
+            </tr>
+          </table>
+        </div>
+        <p>Task: predict disease progression (target) from age, body mass index, blood preassure, ... (features)</p>
+      </section>
+      <section>
+        <h4>Workflow</h4>
+        <div class="split-container" style="margin-left:-100px; margin-right:-100px">
+          <table
+            style="font-size: 25px; width: 90%; border-collapse: collapse; margin-right:100px; text-align: center;">
+            <tr>
+              <th style="text-align: center;"> \(x_1\) </th>
+              <th style="text-align: center;"> \(x_2\) </th>
+              <th style="text-align: center;">\(x_3\) </th>
+              <th style="text-align: center;">\(x_4\) </th>
+              <th style="text-align: center;">\(x_5\) </th>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.038</td>
+              <td style="text-align: center;">0.062</td>
+              <td style="text-align: center;">0.022</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.018</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.002</td>
+              <td style="text-align: center;">-0.051</td>
+              <td style="text-align: center;">-0.026</td>
+              <td style="text-align: center;">-0.039</td>
+              <td style="text-align: center;">-0.092</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.085</td>
+              <td style="text-align: center;">0.044</td>
+              <td style="text-align: center;">-0.006</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.026</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.089</td>
+              <td style="text-align: center;">-0.012</td>
+              <td style="text-align: center;">-0.037</td>
+              <td style="text-align: center;">0.034</td>
+              <td style="text-align: center;">-0.009</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.005</td>
+              <td style="text-align: center;">-0.036</td>
+              <td style="text-align: center;">0.022</td>
+              <td style="text-align: center;">-0.003</td>
+              <td style="text-align: center;">-0.047</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.093</td>
+              <td style="text-align: center;">-0.041</td>
+              <td style="text-align: center;">-0.019</td>
+              <td style="text-align: center;">-0.076</td>
+              <td style="text-align: center;">-0.096</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">-0.045</td>
+              <td style="text-align: center;">-0.047</td>
+              <td style="text-align: center;">-0.016</td>
+              <td style="text-align: center;">-0.039</td>
+              <td style="text-align: center;">-0.038</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">0.064</td>
+              <td style="text-align: center;">-0.002</td>
+              <td style="text-align: center;">0.067</td>
+              <td style="text-align: center;">0.018</td>
+              <td style="text-align: center;">0.003</td>
+            </tr>
+          </table>
+
+          <table class="fragment" data-fragment-index="1"
+            style="font-size: 25px; width: 90%; border-collapse: collapse; text-align: center; color: yellow">
+            <tr>
+              <th style="text-align: center;">\(\hat y\)</th>
+            </tr>
+            <tr>
+              <td style="text-align: center;">15.3</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">55.4</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">121.9</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">199.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">105.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">77.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">38.5</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">62.9</td>
+            </tr>
+          </table>
+
+          <table style="font-size: 25px; width: 90%; border-collapse: collapse; text-align: center; color: yellow">
+            <tr>
+              <th style="text-align: center;">\(y\)</th>
+            </tr>
+            <tr>
+              <td style="text-align: center;">151.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">75.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">141.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">206.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">135.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">97.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">138.0</td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">63.0</td>
+            </tr>
+          </table>
+        </div>
+        <div class="fragment" data-fragment-index="1" style="font-size: 25px; text-align:left; margin-top:30px">
+          Model: predicts target \( \hat y \) from features \(x_1, x_2, \dots \)<br>
+          Loss: compares true value \(y\) with predicted value \( \hat y \) <br>
+          Training: Adjust model parameters to minimize loss
+        </div>
+      </section>
+
+
+
+      <section>
         <h4>Linear regression</h4>
         <img src="assets/linear_regression.svg" width="900">
       </section>
 
-      
+      <section>
+        <section>
+          <h4>Linear regression (1d) </h4>
+          <ol>
+            <li>
+              Specify model (for sample \(i\)): <br>
+              \( \hat y_i = W x_{i} \)
+            </li>
+            <li> Specify Loss <br>
+              \( \mathcal L = \frac{1}{N} \sum_{i=1}^N (y_i - \hat y_i)^2 \)
+            </li>
+            <li>Find weights that minimize Loss</li>
+            <ul>
+              <li class="fragment">Compute gradient<br>
+                \( \mathcal L' = -\frac{2}{N} \sum_i (y_i-Wx_i)x_i \)
+              </li>
+              <li class="fragment">Find minimum<br>
+                \( W^* = \frac{\sum y_i x_i }{\sum x_i^2} \)
+              </li>
+            </ul>
+          </ol>
+        </section>
+        <section>
+          <h4>Linear regression</h4>
+          <ul>
+            <li>In this case: training = pen + paper!</li>
+            <li>Analytical solution</li>
+            <li>Prediction: \(\hat y = W^* x\)</li>
+          </ul>
+          <div class="fragment" style="margin-top: 20px;">
+            This can be generalized to any dimension:
+            <ul>
+              <li> \( \hat y_i = W_1 x_{1, i} + W_2 x_{2, i} + \dots W_n x_{n, i} \)</li>
+              <li>As Matrix notation the analtical solution is</li>
+              <li>\( \mathcal L' = -\frac{2}{N} x^T(y- xW) \)</li>
+              <li>\( W^* = (x^Tx)^{-1}x^Ty \)</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <ul>
+            <li>In principle computing gradients is always possible.</li>
+            <li>But finding the root is not always possible analytically.</li>
+          </ul>
+          What can we do?
+        </section>
+      </section>
 
       <section>
         <h6>Numerical optimization</h6>
-        <div style="display: flex">
-        <div class="r-stack">
-          <img class="fragment" src="assets/1-d-optimizer_step_0.svg" width="900">
-          <img class="fragment" src="assets/1-d-optimizer_step_1.svg" width="900">
-          <img class="fragment" src="assets/1-d-optimizer_step_all.svg" width="900">
+        <div style="display: flex; margin-left:-100px">
+          <div class="fragment-group r-stack">
+            <img class="fragment fade-out" data-fragment-index="1" src="assets/1-d-optimizer_step_0.svg" width="900">
+            <img class="fragment current-visible" data-fragment-index="1" src="assets/1-d-optimizer_step_1.svg"
+              width="900">
+            <img class="fragment current-visible" data-fragment-index="2" src="assets/1-d-optimizer_step_all.svg"
+              width="900">
+          </div>
+          <div class="fragment-group" style="width: 25%; text-align:left ">
+            <p>
+              Pick \(x_0\) <br>
+              Step size \(\ell\)
+            </p>
+            <p class="fragment" data-fragment-index="1">
+              \(x_1 = x_0 - \ell f'(x_0)\)
+            </p>
+            <p class="fragment" data-fragment-index="2">
+              ...
+              \(x_{n+1} = x_n - \ell f'(x_n)\)
+              <br>
+              <span style="font-size: 30px;">
+                ... until convergence
+                <br>
+                <span style="color:yellow">"Gradient Descent"</span>
+              </span>
+            </p>
+            <br>
+            <br>
+          </div>
         </div>
-        <div style="width: 30%">
-          f \(x_0\)
+      </section>
+
+      <section>
+        <h6>This works in any dimension</h6>
+
+        <div style="margin-left: -100px; margin-right: -100px; margin-top:0px; display: flex">
+          <div class="fragment-group r-stack" style="margin-top: -80px;">
+            <img class="fragment fade-out" data-fragment-index="1" src="assets/optimizer_3d.svg" width="550">
+            <img class="fragment current-visible" data-fragment-index="1" src="assets/optimizer_3d_step_1.svg"
+              width="550">
+            <img class="fragment current-visible" data-fragment-index="2" src="assets/optimizer_3d_step_2.svg"
+              width="550">
+            <img class="fragment current-visible" data-fragment-index="3" src="assets/optimizer_3d_step_3.svg"
+              width="550">
+            <img class="fragment current-visible" data-fragment-index="4" src="assets/optimizer_3d_final.svg"
+              width="550">
+          </div>
+          <div class="fragment-group r-stack" style="padding-left: 50px;">
+            <img class="fragment fade-out" data-fragment-index="1" src="assets/optimizer_contour.svg" width="400">
+            <img class="fragment current-visible" data-fragment-index="1" src="assets/optimizer_contour_step_1.svg"
+              width="400">
+            <img class="fragment current-visible" data-fragment-index="2" src="assets/optimizer_contour_step_2.svg"
+              width="400">
+            <img class="fragment current-visible" data-fragment-index="3" src="assets/optimizer_contour_step_3.svg"
+              width="400">
+            <img class="fragment current-visible" data-fragment-index="4" src="assets/optimizer_contour_final.svg"
+              width="400">
+          </div>
         </div>
-      </div>
+        <div class="fragment-group r-stack">
+          <p class="fragment fade-out" data-fragment-index="1"> Contour plot</p>
+          <p class="fragment current-visible" data-fragment-index="1"> Pick \(x_0\) </p>
+          <p class="fragment current-visible" data-fragment-index="2"> \(x_1 = x_0 - \ell f'(x_0)\) </p>
+          <p class="fragment current-visible" data-fragment-index="3"> \(x_2 = x_1 - \ell f'(x_1)\)</p>
+          <p class="fragment current-visible" data-fragment-index="4"> ... until convergence </p>
+        </div>
+
+
+
       </section>
 
       <section>
         <h4>Linear regression as Neural Network</h4>
+        <div style="display: flex; margin-left:-100px; margin-right:-100px">
+          <div style="width:60%">
+            <img src="assets/nn_linear_regression.svg" height="300">
+            <p class="fragment" data-fragment-index="2">Use optimizer to determine {W, b}</p>
+          </div>
+          <div style="font-size: 30px; text-align:left; width:40%">
+            <span style="color:yellow">Model</span>
+            <br>
+            \( \hat y_i = W_1 x_{1,i} + W_2 x_{2,i} + W_3 x_{3,i} + b\)
+            <br>
+            for sample \(i\) out of \(N\)
+            <br>
+            <br>
+            <span style="color:yellow">Loss</span>
+            <br>
+            \( \mathcal L = \frac{1}{N}\sum_i^N (y_i - \hat y_i)^2 \)
+            <br>
+            <br>
+            <div class="fragment" data-fragment-index="1">
+              <span style="color:yellow">\( \Rightarrow \) Gradient of Loss</span>
+              \( \frac{\mathcal L}{\partial W_1} = \frac{2}{N} \sum_i^N (y_i - \hat y_i) x_{1,i} \)
+              \( \frac{\mathcal L}{\partial W_2} = \frac{2}{N} \sum_i^N (y_i - \hat y_i) x_{2,i} \)
+              \( \frac{\mathcal L}{\partial W_3} = \frac{2}{N} \sum_i^N (y_i - \hat y_i) x_{3,i} \)
+              \( \frac{\mathcal L}{\partial b} = \frac{2}{N} \sum_i^N y_i - \hat y_i \)
+            </div>
+
+
+          </div>
+        </div>
       </section>
 
       <section>
-        <h4>Universal approximation theorem</h4>
-        <p>
-          <font color="yellow">
-            <em>"With four parameters I can fit an elephant, and with five I can make him wiggle his trunk."</em> <br>
-            John von
-            Neumann
-          </font>
-        </p>
-        <img src="assets/von_neumann.jpg" width="500">
+        <section>
+          <h4>Add layer</h4>
+          <img src="assets/nn_1_hidden.svg" height="400">
+          <p>Think of it as 3 + 1 linear regressions in parallel</p>
+
+        </section>
+        <section>
+          <h4>Add another layer</h4>
+          <img src="assets/nn_2_hidden.svg" height="400">
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h4>Activation function on hidden layers</h4>
+          <img src="assets/nn_2_hidden_with_activation.svg" height="400">
+        </section>
+        <section>
+          <h4>Activation functions</h4>
+          <img src="assets/sigmoid_activation.svg" width="400">
+          <img src="assets/relu_activation.svg" width="400">
+          <img src="assets/swish_activation.svg" width="400">
+          <img src="assets/gelu_activation.svg" width="400">
+        </section>
+
+        <section>
+          <h4>Why activation functions?</h4>
+          <ul>
+            <li>Need to be non-linear</li>
+            <li>Without: adding layers would not improve model</li>
+            <li>Additional layers would 'collapse'</li>
+          </ul>
+          <div class="r-stack">
+            <div class="fragment current-visible">
+              <br>
+              <span style="color:yellow">Because without</span> activation function:
+              <p>
+                \(\hat{y} = Wh + b\) <br>
+                \(h = W^1x + b^1\) <br>
+                \(\Rightarrow \hat{y} = W(W^1x + b^1) + b = WW^1x + Wb^1 + b \) <br>
+                \(\Rightarrow \hat{y} = \tilde Wx + \tilde b \) <br>
+                <span style="color:yellow">Effectively one layer instead of two!</span>
+              </p>
+            </div>
+            <div class="fragment current-visible">
+              <ul>
+                <li> <span style="color:yellow">Hidden layers:</span> always use activation function</li>
+                <li><span style="color:yellow">Output layer:</span> depends on use case, e.g.</li>
+                <ul>
+                  <li>Real numbers (regression): no activation </li>
+                  <li>Real positive numbers: exp </li>
+                  <li>Probability (classification): sigmoid </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <h4>Deep Neural Network (DNN)</h4>
+        <div style="display:flex; margin-left:-100px; margin-right:-300px">
+          <div>
+            <img src="assets/nn_with_labels.svg" height="650">
+          </div>
+          <div
+            style="width:20%; font-size: 25px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+            Neural network architecture <br><br>
+            Depth: number of layers<br><br>
+            Width of layer: number of variables, nodes, neurons
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h4>Intuition: Piecewise linear</h4>
+        <div style="display:flex; margin-left:-100px; margin-right: -100px">
+
+          <div class="fragment-group r-stack" style="margin-top: 100; width:70%">
+            <div class="fragment fade-out" data-fragment-index="1" style="width: 550px;">
+              <img src="assets/intuition_data.svg" , widht="200px">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="1" style="width: 550px;">
+              <img src="assets/intuition_output_node.svg" , widht="200px">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="2" style="width: 550px;">
+              <img src="assets/intuition_hidden_node_1.svg" , widht="200px">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="3" style="width: 550px;">
+              <img src="assets/intuition_hidden_node_2.svg" , widht="200px">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="4" style="width: 550px;">
+              <img src="assets/intuition_hidden_node_3.svg" , widht="200px">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="5" style="width: 550px;">
+              <img src="assets/intuition_hidden_node_4.svg" , widht="200px">
+            </div>
+          </div>
+
+          <div class="fragment-group r-stack" style="margin-left:50px; width:30%">
+            <img class="fragment fade-out" data-fragment-index="1" src="assets/nn_intuition.svg" height="500px">
+            <img class="fragment current-visible" data-fragment-index="1" src="assets/nn_intuition_output.svg"
+              height="500px">
+            <img class="fragment current-visible" data-fragment-index="2" src="assets/nn_intuition_hidden_1.svg"
+              height="500px">
+            <img class="fragment current-visible" data-fragment-index="3" src="assets/nn_intuition_hidden_2.svg"
+              height="500px">
+            <img class="fragment current-visible" data-fragment-index="4" src="assets/nn_intuition_hidden_3.svg"
+              height="500px">
+            <img class="fragment current-visible" data-fragment-index="5" src="assets/nn_intuition_hidden_4.svg"
+              height="500px">
+
+
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <section>
+          <h6>What is still missing?</h6>
+          <ul>
+            <li><span style="color:yellow">Model (&#10003;):</span> neural network architecture </li>
+            <div class="fragment">
+              <li><span style="color:yellow">Loss:</span> depends on problem</li>
+              <ul>
+                <li>Neural networks allow for any loss</li>
+                <li>In contrast, most other machine learning methods hardwire the loss</li>
+                <li>Advantage: as loss can be tailored to problem</li>
+
+              </ul>
+            </div>
+            <div class="fragment">
+              <li><span style="color:yellow">Training:</span>
+                <ul>
+                  <li>Find weights \(\{W^i, b^i \}\) that minimize loss</li>
+                  <li>Uses Optimizer</li>
+                </ul>
+            </div>
+          </ul>
+        </section>
+
+        <section>
+          <h6>Loss function examples</h6>
+          <div style=" margin-top: 50px; margin-left: -100px; margin-right:-100px">
+            <table style="font-size: 25px; width: 90%; border-collapse: collapse; text-align: center;">
+              <tr>
+                <th>Problem Type </th>
+                <th>Loss function </th>
+                <th> Description </th>
+                <th> Output activation </th>
+              </tr>
+
+              <tr>
+                <td>Regression</td>
+                <td>
+                  Mean squared error <br> <br>
+                  \(\frac{1}{N}\sum_{i=1}^N(\hat y_i - y_i)^2\)
+                  <br>
+                  <br>
+                </td>
+                <td>
+                  \(y\): actual value <br>
+                  \(\hat y\): predicted value </td>
+                <td> No (identity)</td>
+              </tr>
+
+              <tr>
+                <td>Classification</td>
+                <td>
+                  Binary cross entropy <br> <br>
+                  \(\frac{1}{N}\sum_{i=1}^N(y_i \log (\hat y_i)\) <br>
+                  \(+ (1-y_i) \log (1-\hat y_i))\)
+                  <br>
+                </td>
+                <td>
+                  \(y\): actual class <br>
+                  \(\hat y\): predicted class probability
+                </td>
+                <td> Sigmoid</td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          Many more!
+        </section>
+
+        <section>
+          <h6>Neural network frameworks</h6>
+          <ul>
+            <li>tensorflow, pytorch</li>
+            <li>Implement architecture</li>
+            <li>Define loss</li>
+            <li>Do optimization</li>
+            <ul>
+              <li>Gradients: chain rule via <span style="color:yellow">back propagation</span> algorithm</li>
+              <li>Optimization with gradient descent</li>
+              <li>Or generalizations (Adam, RMSprop, AdaDelta)</li>
+              <li>Optimization over data batches (e.g., 32 samples)</li>
+            </ul>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h4>Universal approximation theorem</h4>
+          <p>
+            <font color="yellow">
+              <em>"With four parameters I can fit an elephant, and with five I can make him wiggle his trunk."</em> <br>
+              John von
+              Neumann
+            </font>
+          </p>
+          <img src="assets/von_neumann.jpg" width="500">
+        </section>
+
+        <section>
+          <h4>Universal approximation theorem</h4>
+          <p> A deep feedforward neural network with </p>
+          <ul style="margin-left: 200px;">
+            <li>At least one hidden layer,</li>
+            <li>Sufficiently large width and depth, and</li>
+            <li>Non-linear activation functions (e.g., ReLU)</li>
+          </ul>
+          <p>can approximate (almost) any function </p>
+        </section>
+
+        <section>
+          <h4>Example</h4>
+          <div style="display:flex; margin-left:-100px; margin-right: -100px">
+            <div class="fragment-group r-stack" style="margin-top: 100; width:70%">
+              <img class="fragment fade-out" data-fragment-index="1" src="assets/universal_approximation_0.svg" ,
+                widht="1200px">
+              <img class="fragment current-visible" data-fragment-index="1" src="assets/universal_approximation_1.svg" ,
+                widht="1200px">
+              <img class="fragment current-visible" data-fragment-index="2" src="assets/universal_approximation_2.svg" ,
+                widht="1200px">
+            </div>
+            <div class="fragment-group" style="margin-left:50px; width:30%">
+              <div class="fragment" data-fragment-index="2">
+                <img src="assets/nn_universal_approximation.svg" height="500px">
+                <p style="font-size: 18px; color:yellow; margin-top:-10px">Sigmoid activation</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <font color="yellow">Danger: Overfitting</font>
+          <ul>
+            <li>
+              the model learns the training data too well
+            </li>
+            <li>
+              capturing noise and details that don't generalize to unseen data
+            </li>
+          </ul>
+          <font color="yellow">Detect overfitting</font>
+          <ul>
+            <li>
+              Train - test split of data
+            </li>
+            <li>
+              Good performance on training data but bad on test data
+            </li>
+          </ul>
+          <font color="yellow">Prevent overfitting</font>
+          <br>
+          More data, early stopping, regularization, ...
+        </section>
+      </section>
+
+      <section>
+        <h4>Wrap up neural networks</h4>
+        <span style="color:yellow">Advantages</span>
+        <ul>
+          <li>Can systematically benefit from more data</li>
+          <li>Flexible: universal approximation theorem</li>
+          <li>Loss function can be tailored to problem</li>
+        </ul>
+        <span style="color:yellow">Disadavantages</span>
+        <ul>
+          <li>Computationally expensive for large models</li>
+          <li>May be tedious to optmize (convergence)</li>
+          <li>Need to specify architecture</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Outlook</h4>
+        <p>There are other types of neural networks</p>
+        <ul>
+          <li> <span style="color:yellow"> Convolutional neural networks:</span> images</li>
+          <li> <span style="color:yellow">Transformers:</span> sequence modelling (LLM)</li>
+          <li><span style="color:yellow">Recurrent neural networks:</span> sequence modelling</li>
+        </ul>
+        <p>Transfer learning </p>
+        <ul>
+          <li>Use (parts of) pretrained neural networks</li>
+          <li>Reduce computational cost.</li>
+        </ul>
+
       </section>
 
     </div>
@@ -86,6 +821,8 @@
       });
     });
   </script>
+
+
 </body>
 
 </html>

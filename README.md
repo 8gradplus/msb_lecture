@@ -6,6 +6,15 @@
 We aim to teach theoretical foundations and practicel skills by illustrating the teaching concepts with Python.
 Students should require the necessary skills to start a data science project and should have enough theoretical foundation to evolve on their own.  
 
+
+### Feedback from 2024 Course: 
+- In general: make relation of material to the future work more clear.
+- Why do we need this for our future work.
+- More figures instead of text. 
+- Neural Networks: more applications and use case and real life examples (This could be done by adding an introductory section to neural networks).
+- More group works (generates more interaction)
+- Python lab worked well.
+
 ### Development of colab notebooks
 - `pipenv install`
 - Develop locally using jupyter 
@@ -21,23 +30,6 @@ Students should require the necessary skills to start a data science project and
 - **Todo:** currently we clone reveal.js locally or via github actions
 - However we could also directly get the classes in html files without cloning. 
 
-
-### Ideas
-- ETL via Debtray Workflow
-- Discuss scaling (human and technical) and drawbacks
-- Discuss next steps upon current status
-
-
-### Questions
-- Examination
-	- written examination
-	- at university
-	- keiner soll durchfallen
-	- aber gesamtes notenspektrum
-- It infrastructure
-	- Alle haben ein Notebook
-- Teaching
-- Make it online  (VISA)
 
 ### Recources
 - [Pandas tutorial from Kristian Rother](https://www.academis.eu/pandas_go_to_space/)

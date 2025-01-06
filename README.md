@@ -33,6 +33,7 @@ Students should require the necessary skills to start a data science project and
 
 ### Recources
 - [Pandas tutorial from Kristian Rother](https://www.academis.eu/pandas_go_to_space/)
+- [Parametrization of Von Neumann quote](https://publications.mpi-cbg.de/Mayer_2010_4314.pdf) 
 
 ### Kind of event
 The teaching and learning events are offered in lecture and semi-
